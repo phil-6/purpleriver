@@ -1,0 +1,113 @@
+h1, h2, h3, h4, h5 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 600;
+}
+h1 {
+    font-size: 3.5rem;
+}
+h2 {
+    font-size: 2.5rem;
+}
+h4 {
+    font-size: 2rem;
+}
+body {
+    font-family: 'Krub', sans-serif;
+}
+
+/*
+Navbar Styles
+*/
+.navbar-brand img {
+    max-height: 100px;
+}
+.navbar .dropdown:hover>.dropdown-menu {
+    display: block;
+}
+
+/*Header background*/
+header::before  {
+    content: ' ';
+    display:block;
+    position:absolute;
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+    background-color: #2193b0;
+    background-image: -moz-linear-gradient(120deg, #2193b0 0%, #6dd5ed 100%);
+    background-image: -webkit-linear-gradient(120deg, #2193b0 0%, #6dd5ed 100%);
+    background-image: -ms-linear-gradient(120deg, #2193b0 0%, #6dd5ed 100%);
+    background-image: linear-gradient(120deg, #2193b0 0%, #6dd5ed 100%);
+    color: white;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
+/*Our Services */
+
+#services-page  {
+    background-color: #66a6ff;
+    background-image: -moz-linear-gradient(120deg, #66a6ff 0%, #89f7fe 100%);
+    background-image: -webkit-linear-gradient(120deg, #66a6ff 0%, #89f7fe 100%);
+    background-image: -ms-linear-gradient(120deg, #66a6ff 0%, #89f7fe 100%);
+    background-image: linear-gradient(120deg, #66a6ff 0%, #89f7fe 100%);
+    height: 100%;
+    width: 100%;
+}
+.services-intro{
+    color:white;
+}
+.row {
+    max-width: 90%;
+}
+.card-deck .col{
+    padding: 0;
+}
+.card {
+    border: none;
+    border-radius: 16px;
+    margin: 15px;
+    max-width: 320px;
+    min-width: 320px;
+    min-height:370px;
+    padding: 6px;
+    padding-bottom:16px;
+    box-shadow: rgb(135, 148, 167) 0px 1px 4px 0px;
+}
+.card-img-top {
+    width:220px;
+    height:120px;
+    background-color: lightslategray;
+}
+.card-text {
+    font-size: 0.9rem;
+    line-height: 1.15;
+}
+.card-body{
+    padding: 6px;
+}
+.btn-container{
+    width: 100%;
+    left: 0;
+    bottom: 10px;
+    position: absolute;
+}
+.card-body button {
+    font-weight: 700;
+    border-radius: 16px;
+    padding-left: 26px;
+    padding-right: 26px;
+    box-shadow: 6px 4px 8px 0px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease-in-out;
+    margin: 10px;
+    border-color: rgba(30, 171, 199, 0.8);
+    background-color: rgba(30, 171, 199, 0.8);
+}
+
+.card-body button:hover{
+    box-shadow: none;
+    transition: all 0.2s;
+    border-color: rgba(30, 171, 199, 1);
+    background-color: rgba(30, 171, 199, 1);
+}
