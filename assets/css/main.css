@@ -145,7 +145,7 @@ body.is-preload:after {
     color: #022B3A;
 }
 .container .card:hover i{
-    color: #5B2C6F;
+    color: #663399;
 }
 
 /* Card animation */
@@ -257,7 +257,7 @@ body.is-preload .social{
     color: #022B3A;
 }
 .social a:hover {
-    color: #5B2C6F;
+    color: #663399;
     background: rgba(255, 255, 255, 1);
     transition: all 0.3s;
 }
