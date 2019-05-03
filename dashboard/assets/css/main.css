@@ -16,7 +16,14 @@ body {
 }
 
 .chart {
-    max-width: 500px;
+    width: 40%;
+    position: relative;
+    border: 1px solid;
+    margin-bottom: 10px;
+}
+
+.top-chart {
+    width: 80%;
     position: relative;
     border: 1px solid;
     margin: 10px;
