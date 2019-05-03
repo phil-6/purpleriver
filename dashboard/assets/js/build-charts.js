@@ -1,34 +1,47 @@
 
-var json = (function () {
-    var json = null;
+var json_data = (function () {
+    var json_data = null;
     $.ajax({
         'async': false,
         'global': false,
         'url': 'data/dashboard-data.json',
         'dataType': "json",
         'success': function (data) {
-            json = data;
+            json_data = data;
         }
     });
-    return json;
+    return json_data;
 })();
 
-document.getElementById('testdata').innerHTML = json.monthly_calls_last ;
 
-var ctx = document.getElementById('chartOne');
-var chartOne = new Chart(ctx, {
+
+document.getElementById('testdata').innerHTML = json_data.last_update_date + " at " + json_data.last_update_time ;
+
+
+
+var ctx = document.getElementById('myBarChart');
+var myBarChart = new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        labels: [
+            'No Match',
+            'Match Home',
+            'Match Mob',
+            'Match Alt',
+            'Coll Booked',
+            'Coll Not Booked',
+            'Call Failure'
+        ],
         datasets: [{
             label: 'Calls this Month',
             data: [
-                json.call_no_match_this_month,
-                json.call_match_home_this_month,
-                json.call_match_mobile_this_month,
-                json.call_match_alt_this_month,
-                json.call_collection_booked_this_month,
-                json.call_collection_not_booked_this_month
+                json_data.calls_by_type.total_this_month.call_no_match,
+                json_data.calls_by_type.total_this_month.call_match_home,
+                json_data.calls_by_type.total_this_month.call_match_mob,
+                json_data.calls_by_type.total_this_month.call_match_alt,
+                json_data.calls_by_type.total_this_month.call_collection_booked,
+                json_data.calls_by_type.total_this_month.call_collection_not_booked,
+                json_data.calls_by_type.total_this_month.call_failure
             ],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
@@ -36,7 +49,8 @@ var chartOne = new Chart(ctx, {
                 'rgba(255, 206, 86, 0.2)',
                 'rgba(75, 192, 192, 0.2)',
                 'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
+                'rgba(255, 159, 64, 0.2)',
+                'rgba(45, 142, 42, 0.2)'
             ],
             borderColor: [
                 'rgba(255, 99, 132, 1)',
@@ -44,7 +58,8 @@ var chartOne = new Chart(ctx, {
                 'rgba(255, 206, 86, 1)',
                 'rgba(75, 192, 192, 1)',
                 'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
+                'rgba(255, 159, 64, 1)',
+                'rgba(45, 142, 42, 1)'
             ],
             borderWidth: 1
         }]
@@ -68,38 +83,66 @@ var myDoughnutChart = new Chart(ctx1, {
 
         datasets: [{
             data: [
-                json.call_no_match_this_month,
-                json.call_match_home_this_month,
-                json.call_match_mobile_this_month,
-                json.call_match_alt_this_month,
-                json.call_collection_booked_this_month,
-                json.call_collection_not_booked_this_month
+                json_data.calls_by_type.total_this_month.call_no_match,
+                json_data.calls_by_type.total_this_month.call_match_home,
+                json_data.calls_by_type.total_this_month.call_match_mob,
+                json_data.calls_by_type.total_this_month.call_match_alt,
+                json_data.calls_by_type.total_this_month.call_collection_booked,
+                json_data.calls_by_type.total_this_month.call_collection_not_booked,
+                json_data.calls_by_type.total_this_month.call_failure
             ],
             backgroundColor: [
                 'red',
                 'orange',
                 'yellow',
                 'green',
-                'blue'
+                'blue',
+                'purple',
+                'pink'
+
             ],
-            label: [
-                'No Match',
-                'Match - Home',
-                'Match - Mob',
-                'Match - Alt',
-                'Collection Booked',
-                'Collection Not Booked'
-            ]
-        }]
+            label: 'This Month'
+        },{
+            data: [
+                json_data.calls_by_type.total_last_month.call_no_match,
+                json_data.calls_by_type.total_last_month.call_match_home,
+                json_data.calls_by_type.total_last_month.call_match_mob,
+                json_data.calls_by_type.total_last_month.call_match_alt,
+                json_data.calls_by_type.total_last_month.call_collection_booked,
+                json_data.calls_by_type.total_last_month.call_collection_not_booked,
+                json_data.calls_by_type.total_last_month.call_failure
+            ],
+            backgroundColor: [
+                'red',
+                'orange',
+                'yellow',
+                'green',
+                'blue',
+                'purple',
+                'pink'
+
+            ],
+            label: 'Last Month'
+        }
+        ],
+        labels: [
+            'No Match',
+            'Match - Home',
+            'Match - Mob',
+            'Match - Alt',
+            'Coll Booked',
+            'Coll Not Booked',
+            'Failure'
+        ]
     },
     options: {
         responsive: true,
         legend: {
-            position: 'top'
+            display: false,
         },
         title: {
             display: true,
-            text: ' Doughnut Chart'
+            text: 'Doughnut Chart'
         },
         animation: {
             animateScale: true,
@@ -114,38 +157,56 @@ var myLineChart = new Chart(ctx2, {
     type: 'line',
     data: {
         labels: [
-            'No Match',
-            'Match - Home',
-            'Match - Mob',
-            'Match - Alt',
-            'Collection Booked',
-            'Collection Not Booked'
+            'Jan',
+            'Feb',
+            'Mar',
+            'Apr',
+            'May',
+            'Jun',
+            'Jul',
+            'Aug',
+            'Sep',
+            'Oct',
+            'Nov',
+            'Dec'
         ],
         datasets: [{
-            label: 'This Month',
+            label: 'This Year',
             backgroundColor: '#663399',
             borderColor: '#663399',
             data: [
-                json.call_no_match_this_month,
-                json.call_match_home_this_month,
-                json.call_match_mobile_this_month,
-                json.call_match_alt_this_month,
-                json.call_collection_booked_this_month,
-                json.call_collection_not_booked_this_month
+                json_data.global_calls.calls_by_month.this_year.jan,
+                json_data.global_calls.calls_by_month.this_year.feb,
+                json_data.global_calls.calls_by_month.this_year.mar,
+                json_data.global_calls.calls_by_month.this_year.apr,
+                json_data.global_calls.calls_by_month.this_year.may,
+                json_data.global_calls.calls_by_month.this_year.jun,
+                json_data.global_calls.calls_by_month.this_year.jul,
+                json_data.global_calls.calls_by_month.this_year.aug,
+                json_data.global_calls.calls_by_month.this_year.sep,
+                json_data.global_calls.calls_by_month.this_year.oct,
+                json_data.global_calls.calls_by_month.this_year.nov,
+                json_data.global_calls.calls_by_month.this_year.dec
             ],
             fill: false
         }, {
-            label: 'Last Month',
+            label: 'Last Year',
             fill: false,
             backgroundColor: '#996633',
             borderColor: '#996633',
             data: [
-                json.call_no_match_last_month,
-                json.call_match_home_last_month,
-                json.call_match_mobile_last_month,
-                json.call_match_alt_last_month,
-                json.call_collection_booked_last_month,
-                json.call_collection_not_booked_last_month
+                json_data.global_calls.calls_by_month.last_year.jan,
+                json_data.global_calls.calls_by_month.last_year.feb,
+                json_data.global_calls.calls_by_month.last_year.mar,
+                json_data.global_calls.calls_by_month.last_year.apr,
+                json_data.global_calls.calls_by_month.last_year.may,
+                json_data.global_calls.calls_by_month.last_year.jun,
+                json_data.global_calls.calls_by_month.last_year.jul,
+                json_data.global_calls.calls_by_month.last_year.aug,
+                json_data.global_calls.calls_by_month.last_year.sep,
+                json_data.global_calls.calls_by_month.last_year.oct,
+                json_data.global_calls.calls_by_month.last_year.nov,
+                json_data.global_calls.calls_by_month.last_year.dec
             ]
         }]
     },
