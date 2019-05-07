@@ -61,18 +61,32 @@
 
 </head>
 <body>
-<header>
+<header class="">
+    <div class="row">
+        <div class="col">
+            <h1 class="">Dashboard Demo</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-2">
+            <h3 class="">Last Updated: </h3>
+            <h4 class="" id="last-updated"></h4>
+        </div>
+        <div class="col-2">
+            <h3></h3>
+            <h3>
+                <a href="" onclick="location.reload();">Refresh <i class="fas fa-sync-alt fa-hover"></i>
+                </a>
+            </h3>
+        </div>
+        <div class="col-2">
 
-    <h1>Dashboard Demo</h1>
-
-    <br>
-    <h2>Last Updated: </h2>
-    <h3 id="last-updated"></h3>
-
+        </div>
+    </div>
 </header>
 
 
-<div class="top-chart mx-auto">
+<div class="chart top-chart mx-auto">
     <canvas id="myLineChart" class="line-chart"></canvas>
 </div>
 
