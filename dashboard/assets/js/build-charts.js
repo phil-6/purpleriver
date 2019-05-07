@@ -78,33 +78,12 @@ var myBarChart = new Chart(ctx, {
 
 /* Doughnut Chart showing calls this month and last month by type */
 
-var ctx1 = document.getElementById('myDoughnutChart');
-var myDoughnutChart = new Chart(ctx1, {
+var dc0 = document.getElementById('callsLastMonth_Doughnut');
+var callsLastMonth_Doughnut = new Chart(dc0, {
     type: 'doughnut',
     data: {
 
         datasets: [{
-            data: [
-                json_data.calls_by_type.total_this_month.call_no_match,
-                json_data.calls_by_type.total_this_month.call_match_home,
-                json_data.calls_by_type.total_this_month.call_match_mob,
-                json_data.calls_by_type.total_this_month.call_match_alt,
-                json_data.calls_by_type.total_this_month.call_collection_booked,
-                json_data.calls_by_type.total_this_month.call_collection_not_booked,
-                json_data.calls_by_type.total_this_month.call_failure
-            ],
-            backgroundColor: [
-                'red',
-                'orange',
-                'yellow',
-                'green',
-                'blue',
-                'purple',
-                'pink'
-
-            ],
-            label: 'This Month'
-        },{
             data: [
                 json_data.calls_by_type.total_last_month.call_no_match,
                 json_data.calls_by_type.total_last_month.call_match_home,
@@ -140,7 +119,8 @@ var myDoughnutChart = new Chart(ctx1, {
     options: {
         responsive: true,
         legend: {
-            display: false,
+            display: true,
+            position: 'bottom'
         },
         title: {
             display: true,
@@ -149,10 +129,65 @@ var myDoughnutChart = new Chart(ctx1, {
         animation: {
             animateScale: true,
             animateRotate: true
-        }
+        },
+        aspectRatio: 1
     }
 });
+var dc1 = document.getElementById('callsThisMonth_Doughnut');
+var callsThisMonth_Doughnut = new Chart(dc1, {
+    type: 'doughnut',
+    data: {
 
+        datasets: [{
+            data: [
+                json_data.calls_by_type.total_this_month.call_no_match,
+                json_data.calls_by_type.total_this_month.call_match_home,
+                json_data.calls_by_type.total_this_month.call_match_mob,
+                json_data.calls_by_type.total_this_month.call_match_alt,
+                json_data.calls_by_type.total_this_month.call_collection_booked,
+                json_data.calls_by_type.total_this_month.call_collection_not_booked,
+                json_data.calls_by_type.total_this_month.call_failure
+            ],
+            backgroundColor: [
+                'red',
+                'orange',
+                'yellow',
+                'green',
+                'blue',
+                'purple',
+                'pink'
+
+            ],
+            label: 'This Month'
+        }
+        ],
+        labels: [
+            'No Match',
+            'Match - Home',
+            'Match - Mob',
+            'Match - Alt',
+            'Coll Booked',
+            'Coll Not Booked',
+            'Failure'
+        ]
+    },
+    options: {
+        responsive: true,
+        legend: {
+            display: true,
+            position: 'bottom'
+        },
+        title: {
+            display: true,
+            text: 'Doughnut Chart'
+        },
+        animation: {
+            animateScale: true,
+            animateRotate: true
+        },
+        aspectRatio: 1
+    }
+});
 
 /* Line Chart showing overall calls last year */
 
