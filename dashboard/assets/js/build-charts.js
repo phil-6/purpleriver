@@ -15,7 +15,7 @@ var json_data = (function () {
 
 
 
-document.getElementById('testdata').innerHTML = json_data.last_update_date + " at " + json_data.last_update_time ;
+document.getElementById('last-updated').innerHTML = json_data.last_update_date + " at " + json_data.last_update_time ;
 
 
 
