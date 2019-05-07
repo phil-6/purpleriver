@@ -14,11 +14,11 @@ var json_data = (function () {
 })();
 
 
-
+/* Last Updated Date */
 document.getElementById('last-updated').innerHTML = json_data.last_update_date + " at " + json_data.last_update_time ;
 
 
-
+/* Bar Chart showing calls this month by type */
 var ctx = document.getElementById('myBarChart');
 var myBarChart = new Chart(ctx, {
     type: 'bar',
@@ -75,8 +75,10 @@ var myBarChart = new Chart(ctx, {
     }
 });
 
-var ctx1 = document.getElementById('myDoughnutChart');
 
+/* Doughnut Chart showing calls this month and last month by type */
+
+var ctx1 = document.getElementById('myDoughnutChart');
 var myDoughnutChart = new Chart(ctx1, {
     type: 'doughnut',
     data: {
@@ -151,8 +153,10 @@ var myDoughnutChart = new Chart(ctx1, {
     }
 });
 
-var ctx2 = document.getElementById('myLineChart');
 
+/* Line Chart showing overall calls last year */
+
+var ctx2 = document.getElementById('myLineChart');
 var myLineChart = new Chart(ctx2, {
     type: 'line',
     data: {
