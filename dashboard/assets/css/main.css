@@ -44,6 +44,11 @@ h3 a:hover .fas{
 @-webkit-keyframes fa-spin{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}100%{-webkit-transform:rotate(359deg);transform:rotate(359deg)}}
 @keyframes fa-spin{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}100%{-webkit-transform:rotate(359deg);transform:rotate(359deg)}}
 
+.row{
+    max-width: 100%;
+    margin: 0;
+}
+
 .chart {
     position: relative;
     /*border: 1px solid;*/
@@ -55,7 +60,6 @@ h3 a:hover .fas{
     width: 100%;
     position: relative;
     /*border: 1px solid;*/
-    margin: 10px;
 }
 
 .key-info-card{
