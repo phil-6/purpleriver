@@ -23,6 +23,34 @@ document.getElementById('key_callsThisMonth').innerHTML =  (json_data.global_cal
 document.getElementById('key_collectionsBooked').innerHTML = json_data.calls_by_type.total_this_month.call_collection_booked;
 document.getElementById('key_failedCalls').innerHTML =  json_data.calls_by_type.total_this_month.call_failure;
 
+var key_change_callsThisMonth = ((json_data.global_calls.total_calls - json_data.global_calls.monthly_calls_last)-json_data.global_calls.monthly_calls_last);
+var key_change_collectionsBooked =  (json_data.calls_by_type.total_this_month.call_collection_booked - json_data.calls_by_type.total_last_month.call_collection_booked);
+var key_change_failedCalls = (json_data.calls_by_type.total_this_month.call_failure - json_data.calls_by_type.total_last_month.call_failure);
+document.getElementById('key_change_callsThisMonth').innerHTML =  key_change_callsThisMonth;
+document.getElementById('key_change_collectionsBooked').innerHTML = key_change_collectionsBooked;
+document.getElementById('key_change_failedCalls').innerHTML =  key_change_failedCalls;
+
+if (key_change_callsThisMonth > 0){
+    document.getElementById('key_symbol_callsThisMonth').innerHTML = '<i class="fas fa-sort-up"></i>';
+}else if (key_change_callsThisMonth < 0){
+    document.getElementById('key_symbol_callsThisMonth').innerHTML = '<i class="fas fa-sort-down"></i>';
+} else {
+    document.getElementById('key_symbol_callsThisMonth').innerHTML = "=";
+}
+if (key_change_collectionsBooked > 0){
+    document.getElementById('key_symbol_collectionsBooked').innerHTML = '<i class="fas fa-sort-up"></i>';
+}else if (key_change_collectionsBooked < 0){
+    document.getElementById('key_symbol_collectionsBooked').innerHTML = '<i class="fas fa-sort-down"></i>';
+} else {
+    document.getElementById('key_symbol_collectionsBooked').innerHTML = "=";
+}
+if (key_change_failedCalls > 0){
+    document.getElementById('key_symbol_failedCalls').innerHTML = '<i class="fas fa-sort-up"></i>';
+}else if (key_change_failedCalls < 0){
+    document.getElementById('key_symbol_failedCalls').innerHTML = '<i class="fas fa-sort-down"></i>';
+} else {
+    document.getElementById('key_symbol_failedCalls').innerHTML = "=";
+}
 
 /* Bar Chart showing calls this month by type */
 var ctx = document.getElementById('myBarChart');
