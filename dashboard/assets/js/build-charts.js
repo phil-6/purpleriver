@@ -229,7 +229,7 @@ var myLineChart = new Chart(ctx_lc0, {
         responsive: true,
         title: {
             display: true,
-            text: 'Chart Title'
+            text: 'Calls Per Month'
         },
         tooltips: {
             mode: 'index',
