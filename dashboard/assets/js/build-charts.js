@@ -15,7 +15,13 @@ var json_data = (function () {
 
 
 /* Last Updated Date */
-document.getElementById('last-updated').innerHTML = json_data.last_update_date + " at " + json_data.last_update_time ;
+document.getElementById('last_updated').innerHTML = json_data.last_update_date + " at " + json_data.last_update_time ;
+
+/* Key Info Cards */
+document.getElementById('key_totalCalls').innerHTML =  json_data.global_calls.total_calls;
+document.getElementById('key_callsThisMonth').innerHTML =  (json_data.global_calls.total_calls - json_data.global_calls.monthly_calls_last);
+document.getElementById('key_collectionsBooked').innerHTML = json_data.calls_by_type.total_this_month.call_collection_booked;
+document.getElementById('key_failedCalls').innerHTML =  json_data.calls_by_type.total_this_month.call_failure;
 
 
 /* Bar Chart showing calls this month by type */
@@ -257,7 +263,7 @@ var myLineChart = new Chart(ctx2, {
         },
         tooltips: {
             mode: 'index',
-            intersect: false,
+            intersect: false
         },
         hover: {
             mode: 'nearest',
@@ -278,6 +284,7 @@ var myLineChart = new Chart(ctx2, {
                     labelString: 'Value'
                 }
             }]
-        }
+        },
+        aspectRatio: 3
     }
 });

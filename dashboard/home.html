@@ -70,7 +70,7 @@
     <div class="row">
         <div class="col-2">
             <h3 class="">Last Updated: </h3>
-            <h4 class="" id="last-updated"></h4>
+            <h4 class="" id="last_updated"></h4>
         </div>
         <div class="col-2">
             <h3></h3>
@@ -85,9 +85,34 @@
     </div>
 </header>
 
+<div class="row">
+    <div class="col-md-3 key-info-card purple-card">
+        <h4>Total Calls</h4>
+        <div id="key_totalCalls" class="key-number"></div>
 
-<div class="chart top-chart mx-auto">
-    <canvas id="myLineChart" class="line-chart"></canvas>
+    </div>
+    <div class="col-md-3 key-info-card blue-card">
+        <h4>Calls This Month</h4>
+        <div id="key_callsThisMonth" class="key-number"></div>
+
+    </div>
+    <div class="col-md-3 key-info-card green-card">
+        <h4>Collections Booked This Month</h4>
+        <div id="key_collectionsBooked" class="key-number"></div>
+
+    </div>
+    <div class="col-md-3 key-info-card orange-card">
+        <h4>Failed Calls This Month</h4>
+        <div id="key_failedCalls" class="key-number"></div>
+
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="chart top-chart mx-auto">
+        <canvas id="myLineChart" class="line-chart"></canvas>
+    </div>
 </div>
 
 <div class="row">

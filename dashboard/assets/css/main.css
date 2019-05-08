@@ -1,6 +1,6 @@
-h1, h2, h3, h4, h5 {
+h1, h2, h3, h4, h5, .key-number {
     font-family: 'Josefin Sans', sans-serif;
-    font-weight: 600;
+    font-weight: 700;
 }
 h1 {
     font-size: 3.5rem;
@@ -25,7 +25,6 @@ body {
 header {
     padding: 10px;
     border-bottom: 3px solid #8E44AD;
-    border-radius: 0 0 15px 15px;
     background-color: #8E44AD;
     color: whitesmoke;
 }
@@ -52,10 +51,42 @@ h3 a:hover .fas{
     background-color: white;
     border-radius: 5px;
 }
-
 .top-chart {
-    width: 80%;
+    width: 100%;
     position: relative;
     /*border: 1px solid;*/
     margin: 10px;
+}
+
+.key-info-card{
+    height: 150px;
+    color: white;
+    padding: 15px 50px 15px 50px;
+}
+.key-info-card .key-number {
+    font-size: 5rem;
+}
+.blue-card {
+    background: #76c4e2;
+    background: linear-gradient(to bottom left,#76c4e2,#8176b5);
+    background-size: cover;
+    background-position: center;
+}
+.green-card {
+    background: #85cba8;
+    background: linear-gradient(to bottom left,#85cba8,#76c4e2);
+    background-size: cover;
+    background-position: center;
+}
+.orange-card {
+    background: #ffdb6f;
+    background: linear-gradient(to bottom left,#ffdb6f,#f69259);
+    background-size: cover;
+    background-position: center;
+}
+.purple-card {
+    background: #ba77b1;
+    background: linear-gradient(to bottom left,#ba77b1,#8176b5);
+    background-size: cover;
+    background-position: center;
 }
