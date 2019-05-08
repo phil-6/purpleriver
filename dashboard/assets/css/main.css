@@ -24,8 +24,8 @@ body {
 }
 header {
     padding: 10px;
-    border-bottom: 3px solid #8E44AD;
     background-color: #8E44AD;
+    background-image: linear-gradient(to bottom left, #30cfd0 0%, #330867 100%);
     color: whitesmoke;
 }
 h3 a {
