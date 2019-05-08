@@ -51,6 +51,20 @@ if (key_change_failedCalls > 0) {
     document.getElementById('key_symbol_failedCalls').innerHTML = "=";
 }
 
+/* Extra Info Cards */
+var extra_matchedCalls = (json_data.calls_by_type.total_to_date.call_match_home + json_data.calls_by_type.total_to_date.call_match_mob + json_data.calls_by_type.total_to_date.call_match_alt);
+var extra_notMatchedCalls = (json_data.calls_by_type.total_to_date.call_no_match);
+var extra_bookings = (json_data.calls_by_type.total_to_date.call_collection_booked);
+var extra_notBooked = (json_data.calls_by_type.total_to_date.call_collection_not_booked);
+var extra_failures = (json_data.calls_by_type.total_to_date.call_failure);
+document.getElementById('extra_matchedCalls').innerHTML = extra_matchedCalls;
+document.getElementById('extra_notMatchedCalls').innerHTML = extra_notMatchedCalls;
+document.getElementById('extra_bookings').innerHTML = extra_bookings;
+document.getElementById('extra_notBooked').innerHTML = extra_notBooked;
+document.getElementById('extra_failures').innerHTML = extra_failures;
+
+
+
 /* Bar Chart - Call Matches */
 var ctx_bc0 = document.getElementById('barChartCallMatches').getContext('2d');
 var lastMonthGradient_bc0 = ctx_bc0.createLinearGradient(150.000, 0.000, 150.000, 300.000);

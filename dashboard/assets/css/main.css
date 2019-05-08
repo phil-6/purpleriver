@@ -1,4 +1,4 @@
-h1, h2, h3, h4, h5, .key-number {
+h1, h2, h3, h4, h5, .key-number, .extra-number {
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 700;
 }
@@ -51,53 +51,61 @@ h3 a:hover .fas{
 
 .chart {
     position: relative;
-    /*border: 1px solid;*/
-    margin: 5px;
+    margin: 15px 5px 15px 5px;
     background-color: white;
     border-radius: 5px;
 }
 .full-width-chart {
-    /*border: 1px solid;*/
 }
 
+.key-info-row{
+    margin-bottom: 15px;
+}
 .key-info-card{
     height: 150px;
     color: white;
     padding: 15px 50px 15px 50px;
 }
 .key-info-card .key-number {
+    display: inline;
     font-size: 5rem;
-    display:inline;
 }
 .key-info-card .key-change-number {
-     display:inline;
+     display: inline;
 }
 .key-info-card .key-change-symbol {
-    display:inline;
-    margin-left:60px;
+    display: inline;
+    margin-left: 60px;
     font-size: 2rem;
 }
 .blue-card {
     background: #76c4e2;
     background: linear-gradient(to bottom left,#76c4e2,#8176b5);
-    background-size: cover;
-    background-position: center;
 }
 .green-card {
     background: #85cba8;
     background: linear-gradient(to bottom left,#85cba8,#76c4e2);
-    background-size: cover;
-    background-position: center;
 }
 .orange-card {
     background: #ffdb6f;
     background: linear-gradient(to bottom left,#ffdb6f,#f69259);
-    background-size: cover;
-    background-position: center;
 }
 .purple-card {
     background: #ba77b1;
     background: linear-gradient(to bottom left,#ba77b1,#8176b5);
-    background-size: cover;
-    background-position: center;
+}
+
+.extra-info-card {
+    text-align: center;
+    color: #76c4e2;
+    background-color: white;
+    border-radius: 5px;
+    margin: 15px 5px 15px 5px;
+    padding: 10px
+}
+.extra-number {
+    font-size: 4rem;
+}
+.extra-info-col {
+    padding: 0;
 }
