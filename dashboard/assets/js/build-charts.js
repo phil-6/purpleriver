@@ -34,21 +34,21 @@ if (key_change_callsThisMonth > 0) {
 } else if (key_change_callsThisMonth < 0) {
     document.getElementById('key_symbol_callsThisMonth').innerHTML = '<i class="fas fa-sort-down"></i>';
 } else {
-    document.getElementById('key_symbol_callsThisMonth').innerHTML = "=";
+    document.getElementById('key_symbol_callsThisMonth').innerHTML = '<i class="fas fa-equals"></i>';
 }
 if (key_change_collectionsBooked > 0) {
     document.getElementById('key_symbol_collectionsBooked').innerHTML = '<i class="fas fa-sort-up"></i>';
 } else if (key_change_collectionsBooked < 0) {
     document.getElementById('key_symbol_collectionsBooked').innerHTML = '<i class="fas fa-sort-down"></i>';
 } else {
-    document.getElementById('key_symbol_collectionsBooked').innerHTML = "=";
+    document.getElementById('key_symbol_collectionsBooked').innerHTML = '<i class="fas fa-equals"></i>';
 }
 if (key_change_failedCalls > 0) {
     document.getElementById('key_symbol_failedCalls').innerHTML = '<i class="fas fa-sort-up"></i>';
 } else if (key_change_failedCalls < 0) {
     document.getElementById('key_symbol_failedCalls').innerHTML = '<i class="fas fa-sort-down"></i>';
 } else {
-    document.getElementById('key_symbol_failedCalls').innerHTML = "=";
+    document.getElementById('key_symbol_failedCalls').innerHTML = '<i class="fas fa-equals"></i>';
 }
 
 /* Extra Info Cards */
