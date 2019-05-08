@@ -273,7 +273,8 @@ var myLineChart = new Chart(ctx_lc0, {
     }
 });
 
-/* Doughnut Chart showing calls this month and last month by type */
+/*
+/!* Doughnut Chart showing calls this month and last month by type *!/
 
 var dc0 = document.getElementById('callsLastMonth_Doughnut');
 var callsLastMonth_Doughnut = new Chart(dc0, {
@@ -385,4 +386,5 @@ var callsThisMonth_Doughnut = new Chart(dc1, {
         aspectRatio: 1
     }
 });
+*/
 
