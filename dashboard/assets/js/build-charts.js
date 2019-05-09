@@ -282,8 +282,14 @@ var lineChartAnnualCalls = new Chart(ctx_lc0, {
 
 /* Doughnut Chart split of call matches */
 
-var dc0 = document.getElementById('callMatches_Doughnut');
-var callMatches_Doughnut = new Chart(dc0, {
+var ctx_dc0 = document.getElementById('callMatches_Doughnut').getContext('2d');
+var callMatchesGradient_dc0 = ctx_dc0.createLinearGradient(0.000, 50.000, 300.000, 250.000);
+callMatchesGradient_dc0.addColorStop(0.000, '#92fe9de6');
+callMatchesGradient_dc0.addColorStop(1.000, '#00c9ffe6');
+var notMatchedGradient_dc0 = ctx_dc0.createLinearGradient(150.000, 0.000, 150.000, 300.000);
+notMatchedGradient_dc0.addColorStop(0.000, '#fc6076e6');
+notMatchedGradient_dc0.addColorStop(1.000, '#ff9a44e6');
+var callMatches_Doughnut = new Chart(ctx_dc0, {
     type: 'doughnut',
     data: {
 
@@ -293,8 +299,8 @@ var callMatches_Doughnut = new Chart(dc0, {
                 extra_notMatchedCalls
             ],
             backgroundColor: [
-                'red',
-                'blue'
+                callMatchesGradient_dc0,
+                notMatchedGradient_dc0
             ]
         }
         ],
@@ -323,8 +329,17 @@ var callMatches_Doughnut = new Chart(dc0, {
 
 /* Doughnut Chart split of bookings*/
 
-var dc1 = document.getElementById('callBookings_Doughnut');
-var callBookings_Doughnut = new Chart(dc1, {
+var ctx_dc1 = document.getElementById('callBookings_Doughnut').getContext('2d');
+var bookingsGradient_dc1 = ctx_dc1.createLinearGradient(0.000, 50.000, 300.000, 250.000);
+bookingsGradient_dc1.addColorStop(0.000, '#92fe9de6');
+bookingsGradient_dc1.addColorStop(1.000, '#00c9ffe6');
+var notBookedGradient_dc1 = ctx_dc1.createLinearGradient(150.000, 0.000, 150.000, 300.000);
+notBookedGradient_dc1.addColorStop(0.000, '#76c4e2e6');
+notBookedGradient_dc1.addColorStop(1.000, '#8176b5e6');
+var failuresGradient_dc1 = ctx_dc1.createLinearGradient(150.000, 0.000, 150.000, 300.000);
+failuresGradient_dc1.addColorStop(0.000, '#ff9a44e6');
+failuresGradient_dc1.addColorStop(1.000, '#fc6076e6');
+var callBookings_Doughnut = new Chart(ctx_dc1, {
     type: 'doughnut',
     data: {
         datasets: [{
@@ -334,9 +349,9 @@ var callBookings_Doughnut = new Chart(dc1, {
                 extra_failures
             ],
             backgroundColor: [
-                'green',
-                'purple',
-                'orange'
+                bookingsGradient_dc1,
+                notBookedGradient_dc1,
+                failuresGradient_dc1
             ]
         }
         ],

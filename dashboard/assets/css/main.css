@@ -85,6 +85,10 @@ h3 a:hover .fas{
     background: #ba77b1;
     background: linear-gradient(to bottom left,#ba77b1,#8176b5);
 }
+.red-card {
+    background: #fc6076e6;
+    background: linear-gradient(to bottom left,#fc6076e6,#ff9a44e6);
+}
 
 .extra-info-card {
     text-align: center;
