@@ -13,27 +13,6 @@ var json_data = (function () {
 })();
 
 
-
-/* Color Gradients */
-var lastMonthGradient_bc0 = ctx_bc0.createLinearGradient(150.000, 0.000, 150.000, 300.000);
-lastMonthGradient_bc0.addColorStop(0.000, '#ffdb6fe6');
-lastMonthGradient_bc0.addColorStop(1.000, '#f69259e6');
-var thisMonthGradient_bc0 = ctx_bc0.createLinearGradient(150.000, 0.000, 150.000, 300.000);
-thisMonthGradient_bc0.addColorStop(0.000, '#8176b5e6');
-thisMonthGradient_bc0.addColorStop(1.000, '#76c4e2e6');
-var lastMonthGradient_bc1 = ctx_bc1.createLinearGradient(150.000, 0.000, 150.000, 300.000);
-lastMonthGradient_bc1.addColorStop(0.000, '#ffdb6fe6');
-lastMonthGradient_bc1.addColorStop(1.000, '#f69259e6');
-var thisMonthGradient_bc1 = ctx_bc1.createLinearGradient(150.000, 0.000, 150.000, 300.000);
-thisMonthGradient_bc1.addColorStop(0.000, '#8176b5e6');
-thisMonthGradient_bc1.addColorStop(1.000, '#76c4e2e6');
-var matchedCallsGradient_lc0 = ctx_lc0.createLinearGradient(0.000, 50.000, 300.000, 250.000);
-matchedCallsGradient_lc0.addColorStop(0.000, '#92fe9de6');
-matchedCallsGradient_lc0.addColorStop(1.000, '#00c9ffe6');
-var notMatchedGradient_lc0 = ctx_lc0.createLinearGradient(150.000, 0.000, 150.000, 300.000);
-notMatchedGradient_lc0.addColorStop(0.000, '#fc6076e6');
-notMatchedGradient_lc0.addColorStop(1.000, '#ff9a44e6');
-
 /* Last Updated Date */
 document.getElementById('last_updated').innerHTML = json_data.last_update_date + " at " + json_data.last_update_time;
 
@@ -88,7 +67,12 @@ document.getElementById('extra_failures').innerHTML = extra_failures;
 
 /* Bar Chart - Call Matches */
 var ctx_bc0 = document.getElementById('barChartCallMatches').getContext('2d');
-
+var lastMonthGradient_bc0 = ctx_bc0.createLinearGradient(150.000, 0.000, 150.000, 300.000);
+lastMonthGradient_bc0.addColorStop(0.000, '#ffdb6fe6');
+lastMonthGradient_bc0.addColorStop(1.000, '#f69259e6');
+var thisMonthGradient_bc0 = ctx_bc0.createLinearGradient(150.000, 0.000, 150.000, 300.000);
+thisMonthGradient_bc0.addColorStop(0.000, '#8176b5e6');
+thisMonthGradient_bc0.addColorStop(1.000, '#76c4e2e6');
 var barChartCallMatches = new Chart(ctx_bc0, {
     type: 'bar',
     data: {
@@ -142,7 +126,12 @@ var barChartCallMatches = new Chart(ctx_bc0, {
 
 /* Bar Chart - Call Outcomes */
 var ctx_bc1 = document.getElementById('barChartCallOutcomes').getContext('2d');
-
+var lastMonthGradient_bc1 = ctx_bc1.createLinearGradient(150.000, 0.000, 150.000, 300.000);
+lastMonthGradient_bc1.addColorStop(0.000, '#ffdb6fe6');
+lastMonthGradient_bc1.addColorStop(1.000, '#f69259e6');
+var thisMonthGradient_bc1 = ctx_bc1.createLinearGradient(150.000, 0.000, 150.000, 300.000);
+thisMonthGradient_bc1.addColorStop(0.000, '#8176b5e6');
+thisMonthGradient_bc1.addColorStop(1.000, '#76c4e2e6');
 var barChartCallOutcomes = new Chart(ctx_bc1, {
     type: 'bar',
     data: {
@@ -193,7 +182,12 @@ var barChartCallOutcomes = new Chart(ctx_bc1, {
 
 /* Line Chart showing overall calls last year */
 var ctx_lc0 = document.getElementById('lineChartAnnualCalls').getContext('2d');
-
+var matchedCallsGradient_lc0 = ctx_lc0.createLinearGradient(0.000, 50.000, 300.000, 250.000);
+matchedCallsGradient_lc0.addColorStop(0.000, '#92fe9de6');
+matchedCallsGradient_lc0.addColorStop(1.000, '#00c9ffe6');
+var notMatchedGradient_lc0 = ctx_lc0.createLinearGradient(150.000, 0.000, 150.000, 300.000);
+notMatchedGradient_lc0.addColorStop(0.000, '#fc6076e6');
+notMatchedGradient_lc0.addColorStop(1.000, '#ff9a44e6');
 var lineChartAnnualCalls = new Chart(ctx_lc0, {
     type: 'line',
     data: {
