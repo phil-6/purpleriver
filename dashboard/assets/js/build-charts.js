@@ -13,6 +13,27 @@ var json_data = (function () {
 })();
 
 
+
+/* Color Gradients */
+var lastMonthGradient_bc0 = ctx_bc0.createLinearGradient(150.000, 0.000, 150.000, 300.000);
+lastMonthGradient_bc0.addColorStop(0.000, '#ffdb6fe6');
+lastMonthGradient_bc0.addColorStop(1.000, '#f69259e6');
+var thisMonthGradient_bc0 = ctx_bc0.createLinearGradient(150.000, 0.000, 150.000, 300.000);
+thisMonthGradient_bc0.addColorStop(0.000, '#8176b5e6');
+thisMonthGradient_bc0.addColorStop(1.000, '#76c4e2e6');
+var lastMonthGradient_bc1 = ctx_bc1.createLinearGradient(150.000, 0.000, 150.000, 300.000);
+lastMonthGradient_bc1.addColorStop(0.000, '#ffdb6fe6');
+lastMonthGradient_bc1.addColorStop(1.000, '#f69259e6');
+var thisMonthGradient_bc1 = ctx_bc1.createLinearGradient(150.000, 0.000, 150.000, 300.000);
+thisMonthGradient_bc1.addColorStop(0.000, '#8176b5e6');
+thisMonthGradient_bc1.addColorStop(1.000, '#76c4e2e6');
+var matchedCallsGradient_lc0 = ctx_lc0.createLinearGradient(0.000, 50.000, 300.000, 250.000);
+matchedCallsGradient_lc0.addColorStop(0.000, '#92fe9de6');
+matchedCallsGradient_lc0.addColorStop(1.000, '#00c9ffe6');
+var notMatchedGradient_lc0 = ctx_lc0.createLinearGradient(150.000, 0.000, 150.000, 300.000);
+notMatchedGradient_lc0.addColorStop(0.000, '#fc6076e6');
+notMatchedGradient_lc0.addColorStop(1.000, '#ff9a44e6');
+
 /* Last Updated Date */
 document.getElementById('last_updated').innerHTML = json_data.last_update_date + " at " + json_data.last_update_time;
 
@@ -67,12 +88,7 @@ document.getElementById('extra_failures').innerHTML = extra_failures;
 
 /* Bar Chart - Call Matches */
 var ctx_bc0 = document.getElementById('barChartCallMatches').getContext('2d');
-var lastMonthGradient_bc0 = ctx_bc0.createLinearGradient(150.000, 0.000, 150.000, 300.000);
-lastMonthGradient_bc0.addColorStop(0.000, '#ffdb6fe6');
-lastMonthGradient_bc0.addColorStop(1.000, '#f69259e6');
-var thisMonthGradient_bc0 = ctx_bc0.createLinearGradient(150.000, 0.000, 150.000, 300.000);
-thisMonthGradient_bc0.addColorStop(0.000, '#8176b5e6');
-thisMonthGradient_bc0.addColorStop(1.000, '#76c4e2e6');
+
 var barChartCallMatches = new Chart(ctx_bc0, {
     type: 'bar',
     data: {
@@ -126,12 +142,7 @@ var barChartCallMatches = new Chart(ctx_bc0, {
 
 /* Bar Chart - Call Outcomes */
 var ctx_bc1 = document.getElementById('barChartCallOutcomes').getContext('2d');
-var lastMonthGradient_bc1 = ctx_bc1.createLinearGradient(150.000, 0.000, 150.000, 300.000);
-lastMonthGradient_bc1.addColorStop(0.000, '#ffdb6fe6');
-lastMonthGradient_bc1.addColorStop(1.000, '#f69259e6');
-var thisMonthGradient_bc1 = ctx_bc1.createLinearGradient(150.000, 0.000, 150.000, 300.000);
-thisMonthGradient_bc1.addColorStop(0.000, '#8176b5e6');
-thisMonthGradient_bc1.addColorStop(1.000, '#76c4e2e6');
+
 var barChartCallOutcomes = new Chart(ctx_bc1, {
     type: 'bar',
     data: {
@@ -182,12 +193,7 @@ var barChartCallOutcomes = new Chart(ctx_bc1, {
 
 /* Line Chart showing overall calls last year */
 var ctx_lc0 = document.getElementById('lineChartAnnualCalls').getContext('2d');
-var matchedCallsGradient_lc0 = ctx_lc0.createLinearGradient(0.000, 50.000, 300.000, 250.000);
-matchedCallsGradient_lc0.addColorStop(0.000, '#92fe9de6');
-matchedCallsGradient_lc0.addColorStop(1.000, '#00c9ffe6');
-var notMatchedGradient_lc0 = ctx_lc0.createLinearGradient(150.000, 0.000, 150.000, 300.000);
-notMatchedGradient_lc0.addColorStop(0.000, '#fc6076e6');
-notMatchedGradient_lc0.addColorStop(1.000, '#ff9a44e6');
+
 var lineChartAnnualCalls = new Chart(ctx_lc0, {
     type: 'line',
     data: {
@@ -279,42 +285,68 @@ var lineChartAnnualCalls = new Chart(ctx_lc0, {
     }
 });
 
-/*
-/!* Doughnut Chart showing calls this month and last month by type *!/
 
-var dc0 = document.getElementById('callsLastMonth_Doughnut');
-var callsLastMonth_Doughnut = new Chart(dc0, {
+/* Doughnut Chart split of call matches */
+
+var dc0 = document.getElementById('callMatches_Doughnut');
+var callMatches_Doughnut = new Chart(dc0, {
     type: 'doughnut',
     data: {
 
         datasets: [{
             data: [
-                json_data.calls_by_type.total_last_month.call_no_match,
-                json_data.calls_by_type.total_last_month.call_match_home,
-                json_data.calls_by_type.total_last_month.call_match_mob,
-                json_data.calls_by_type.total_last_month.call_match_alt,
-                json_data.calls_by_type.total_last_month.call_collection_booked,
-                json_data.calls_by_type.total_last_month.call_collection_not_booked,
-                json_data.calls_by_type.total_last_month.call_failure
+                extra_matchedCalls,
+                extra_notMatchedCalls
             ],
             backgroundColor: [
                 'red',
-                'orange',
-                'yellow',
-                'green',
-                'blue',
-                'purple',
-                'pink'
-
-            ],
-            label: 'Last Month'
+                'blue'
+            ]
         }
         ],
         labels: [
-            'No Match',
-            'Match - Home',
-            'Match - Mob',
-            'Match - Alt',
+            'Match',
+            'No Match'
+        ]
+    },
+    options: {
+        responsive: true,
+        legend: {
+            display: true,
+            position: 'bottom'
+        },
+        title: {
+            display: true,
+            text: 'Call Matches'
+        },
+        animation: {
+            animateScale: true,
+            animateRotate: true
+        },
+        aspectRatio: 1
+    }
+});
+
+/* Doughnut Chart split of bookings*/
+
+var dc1 = document.getElementById('callBookings_Doughnut');
+var callBookings_Doughnut = new Chart(dc1, {
+    type: 'doughnut',
+    data: {
+        datasets: [{
+            data: [
+                extra_bookings,
+                extra_notBooked,
+                extra_failures
+            ],
+            backgroundColor: [
+                'green',
+                'purple',
+                'orange'
+            ]
+        }
+        ],
+        labels: [
             'Coll Booked',
             'Coll Not Booked',
             'Failure'
@@ -328,7 +360,7 @@ var callsLastMonth_Doughnut = new Chart(dc0, {
         },
         title: {
             display: true,
-            text: 'Doughnut Chart'
+            text: 'Bookings'
         },
         animation: {
             animateScale: true,
@@ -337,60 +369,6 @@ var callsLastMonth_Doughnut = new Chart(dc0, {
         aspectRatio: 1
     }
 });
-var dc1 = document.getElementById('callsThisMonth_Doughnut');
-var callsThisMonth_Doughnut = new Chart(dc1, {
-    type: 'doughnut',
-    data: {
 
-        datasets: [{
-            data: [
-                json_data.calls_by_type.total_this_month.call_no_match,
-                json_data.calls_by_type.total_this_month.call_match_home,
-                json_data.calls_by_type.total_this_month.call_match_mob,
-                json_data.calls_by_type.total_this_month.call_match_alt,
-                json_data.calls_by_type.total_this_month.call_collection_booked,
-                json_data.calls_by_type.total_this_month.call_collection_not_booked,
-                json_data.calls_by_type.total_this_month.call_failure
-            ],
-            backgroundColor: [
-                'red',
-                'orange',
-                'yellow',
-                'green',
-                'blue',
-                'purple',
-                'pink'
 
-            ],
-            label: 'This Month'
-        }
-        ],
-        labels: [
-            'No Match',
-            'Match - Home',
-            'Match - Mob',
-            'Match - Alt',
-            'Coll Booked',
-            'Coll Not Booked',
-            'Failure'
-        ]
-    },
-    options: {
-        responsive: true,
-        legend: {
-            display: true,
-            position: 'bottom'
-        },
-        title: {
-            display: true,
-            text: 'Doughnut Chart'
-        },
-        animation: {
-            animateScale: true,
-            animateRotate: true
-        },
-        aspectRatio: 1
-    }
-});
-*/
 
