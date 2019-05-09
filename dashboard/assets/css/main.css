@@ -67,15 +67,7 @@ h3 a:hover .fas{
     padding: 15px 50px 15px 50px;
 }
 .key-info-card .key-number {
-    display: inline;
     font-size: 5rem;
-}
-.key-info-card .key-change-number {
-     display: inline;
-}
-.key-info-card .key-change-symbol {
-    display: inline;
-    margin-left: 60px;
 }
 .blue-card {
     background: #76c4e2;
