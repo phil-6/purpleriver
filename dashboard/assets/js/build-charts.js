@@ -30,25 +30,25 @@ document.getElementById('key_change_collectionsBooked').innerHTML = key_change_c
 document.getElementById('key_change_failedCalls').innerHTML = key_change_failedCalls;
 
 if (key_change_callsThisMonth > 0) {
-    document.getElementById('key_symbol_callsThisMonth').innerHTML = '<i class="fas fa-sort-up"></i>';
+    document.getElementById('key_symbol_callsThisMonth').innerHTML = '<i class="fas fa-2x fa-sort-up"></i>';
 } else if (key_change_callsThisMonth < 0) {
-    document.getElementById('key_symbol_callsThisMonth').innerHTML = '<i class="fas fa-sort-down"></i>';
+    document.getElementById('key_symbol_callsThisMonth').innerHTML = '<i class="fas fa-2x fa-sort-down"></i>';
 } else {
-    document.getElementById('key_symbol_callsThisMonth').innerHTML = '<i class="fas fa-equals"></i>';
+    document.getElementById('key_symbol_callsThisMonth').innerHTML = '<i class="fas fa-1x fa-equals"></i>';
 }
 if (key_change_collectionsBooked > 0) {
-    document.getElementById('key_symbol_collectionsBooked').innerHTML = '<i class="fas fa-sort-up"></i>';
+    document.getElementById('key_symbol_collectionsBooked').innerHTML = '<i class="fas fa-2x fa-sort-up"></i>';
 } else if (key_change_collectionsBooked < 0) {
-    document.getElementById('key_symbol_collectionsBooked').innerHTML = '<i class="fas fa-sort-down"></i>';
+    document.getElementById('key_symbol_collectionsBooked').innerHTML = '<i class="fas fa-2x fa-sort-down"></i>';
 } else {
-    document.getElementById('key_symbol_collectionsBooked').innerHTML = '<i class="fas fa-equals"></i>';
+    document.getElementById('key_symbol_collectionsBooked').innerHTML = '<i class="fas fa-1x fa-equals"></i>';
 }
 if (key_change_failedCalls > 0) {
-    document.getElementById('key_symbol_failedCalls').innerHTML = '<i class="fas fa-sort-up"></i>';
+    document.getElementById('key_symbol_failedCalls').innerHTML = '<i class="fas fa-2x fa-sort-up"></i>';
 } else if (key_change_failedCalls < 0) {
-    document.getElementById('key_symbol_failedCalls').innerHTML = '<i class="fas fa-sort-down"></i>';
+    document.getElementById('key_symbol_failedCalls').innerHTML = '<i class="fas fa-2x fa-sort-down"></i>';
 } else {
-    document.getElementById('key_symbol_failedCalls').innerHTML = '<i class="fas fa-equals"></i>';
+    document.getElementById('key_symbol_failedCalls').innerHTML = '<i class="fas fa-1x fa-equals"></i>';
 }
 
 /* Extra Info Cards */
