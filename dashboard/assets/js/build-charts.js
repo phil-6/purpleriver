@@ -181,8 +181,14 @@ var barChartCallOutcomes = new Chart(ctx_bc1, {
 });
 
 /* Line Chart showing overall calls last year */
-var ctx_lc0 = document.getElementById('lineChartAnnualCalls');
-var myLineChart = new Chart(ctx_lc0, {
+var ctx_lc0 = document.getElementById('lineChartAnnualCalls').getContext('2d');
+var matchedCallsGradient_lc0 = ctx_lc0.createLinearGradient(0.000, 50.000, 300.000, 250.000);
+matchedCallsGradient_lc0.addColorStop(0.000, '#92fe9de6');
+matchedCallsGradient_lc0.addColorStop(1.000, '#00c9ffe6');
+var notMatchedGradient_lc0 = ctx_lc0.createLinearGradient(150.000, 0.000, 150.000, 300.000);
+notMatchedGradient_lc0.addColorStop(0.000, '#fc6076e6');
+notMatchedGradient_lc0.addColorStop(1.000, '#ff9a44e6');
+var lineChartAnnualCalls = new Chart(ctx_lc0, {
     type: 'line',
     data: {
         labels: [
@@ -200,42 +206,42 @@ var myLineChart = new Chart(ctx_lc0, {
             'Dec'
         ],
         datasets: [{
-            label: 'This Year',
-            backgroundColor: '#663399',
-            borderColor: '#663399',
+            label: 'Matched Calls',
+            fill: 'start',
+            backgroundColor: matchedCallsGradient_lc0,
+            borderColor: '#00c9ff',
             data: [
-                json_data.global_calls.calls_by_month.this_year.jan,
-                json_data.global_calls.calls_by_month.this_year.feb,
-                json_data.global_calls.calls_by_month.this_year.mar,
-                json_data.global_calls.calls_by_month.this_year.apr,
-                json_data.global_calls.calls_by_month.this_year.may,
-                json_data.global_calls.calls_by_month.this_year.jun,
-                json_data.global_calls.calls_by_month.this_year.jul,
-                json_data.global_calls.calls_by_month.this_year.aug,
-                json_data.global_calls.calls_by_month.this_year.sep,
-                json_data.global_calls.calls_by_month.this_year.oct,
-                json_data.global_calls.calls_by_month.this_year.nov,
-                json_data.global_calls.calls_by_month.this_year.dec
-            ],
-            fill: false
+                json_data.global_calls.calls_by_month.call_match.jan,
+                json_data.global_calls.calls_by_month.call_match.feb,
+                json_data.global_calls.calls_by_month.call_match.mar,
+                json_data.global_calls.calls_by_month.call_match.apr,
+                json_data.global_calls.calls_by_month.call_match.may,
+                json_data.global_calls.calls_by_month.call_match.jun,
+                json_data.global_calls.calls_by_month.call_match.jul,
+                json_data.global_calls.calls_by_month.call_match.aug,
+                json_data.global_calls.calls_by_month.call_match.sep,
+                json_data.global_calls.calls_by_month.call_match.oct,
+                json_data.global_calls.calls_by_month.call_match.nov,
+                json_data.global_calls.calls_by_month.call_match.dec
+            ]
         }, {
-            label: 'Last Year',
-            fill: false,
-            backgroundColor: '#996633',
-            borderColor: '#996633',
+            label: 'Not Matched Calls',
+            fill: '-1',
+            backgroundColor: notMatchedGradient_lc0,
+            borderColor: '#ff9a44',
             data: [
-                json_data.global_calls.calls_by_month.last_year.jan,
-                json_data.global_calls.calls_by_month.last_year.feb,
-                json_data.global_calls.calls_by_month.last_year.mar,
-                json_data.global_calls.calls_by_month.last_year.apr,
-                json_data.global_calls.calls_by_month.last_year.may,
-                json_data.global_calls.calls_by_month.last_year.jun,
-                json_data.global_calls.calls_by_month.last_year.jul,
-                json_data.global_calls.calls_by_month.last_year.aug,
-                json_data.global_calls.calls_by_month.last_year.sep,
-                json_data.global_calls.calls_by_month.last_year.oct,
-                json_data.global_calls.calls_by_month.last_year.nov,
-                json_data.global_calls.calls_by_month.last_year.dec
+                json_data.global_calls.calls_by_month.total_calls.jan,
+                json_data.global_calls.calls_by_month.total_calls.feb,
+                json_data.global_calls.calls_by_month.total_calls.mar,
+                json_data.global_calls.calls_by_month.total_calls.apr,
+                json_data.global_calls.calls_by_month.total_calls.may,
+                json_data.global_calls.calls_by_month.total_calls.jun,
+                json_data.global_calls.calls_by_month.total_calls.jul,
+                json_data.global_calls.calls_by_month.total_calls.aug,
+                json_data.global_calls.calls_by_month.total_calls.sep,
+                json_data.global_calls.calls_by_month.total_calls.oct,
+                json_data.global_calls.calls_by_month.total_calls.nov,
+                json_data.global_calls.calls_by_month.total_calls.dec
             ]
         }]
     },
