@@ -20,14 +20,14 @@ document.getElementById('last_updated').innerHTML = json_data.last_update_date +
 document.getElementById('key_totalCalls').innerHTML = json_data.global_calls.total_calls;
 document.getElementById('key_callsThisMonth').innerHTML = (json_data.global_calls.total_calls - json_data.global_calls.monthly_calls_last);
 document.getElementById('key_collectionsBooked').innerHTML = json_data.calls_by_type.total_this_month.call_collection_booked;
-document.getElementById('key_failedCalls').innerHTML = json_data.calls_by_type.total_this_month.call_failure;
+document.getElementById('key_droppedCalls').innerHTML = json_data.calls_by_type.total_this_month.call_failure;
 
 var key_change_callsThisMonth = ((json_data.global_calls.total_calls - json_data.global_calls.monthly_calls_last) - json_data.global_calls.monthly_calls_last);
 var key_change_collectionsBooked = (json_data.calls_by_type.total_this_month.call_collection_booked - json_data.calls_by_type.total_last_month.call_collection_booked);
-var key_change_failedCalls = (json_data.calls_by_type.total_this_month.call_failure - json_data.calls_by_type.total_last_month.call_failure);
+var key_change_droppedCalls = (json_data.calls_by_type.total_this_month.call_failure - json_data.calls_by_type.total_last_month.call_failure);
 document.getElementById('key_change_callsThisMonth').innerHTML = key_change_callsThisMonth;
 document.getElementById('key_change_collectionsBooked').innerHTML = key_change_collectionsBooked;
-document.getElementById('key_change_failedCalls').innerHTML = key_change_failedCalls;
+document.getElementById('key_change_droppedCalls').innerHTML = key_change_droppedCalls;
 
 if (key_change_callsThisMonth > 0) {
     document.getElementById('key_symbol_callsThisMonth').innerHTML = '<i class="fas fa-2x fa-sort-up"></i>';
@@ -43,12 +43,12 @@ if (key_change_collectionsBooked > 0) {
 } else {
     document.getElementById('key_symbol_collectionsBooked').innerHTML = '<i class="fas fa-1x fa-equals"></i>';
 }
-if (key_change_failedCalls > 0) {
-    document.getElementById('key_symbol_failedCalls').innerHTML = '<i class="fas fa-2x fa-sort-up"></i>';
-} else if (key_change_failedCalls < 0) {
-    document.getElementById('key_symbol_failedCalls').innerHTML = '<i class="fas fa-2x fa-sort-down"></i>';
+if (key_change_droppedCalls > 0) {
+    document.getElementById('key_symbol_droppedCalls').innerHTML = '<i class="fas fa-2x fa-sort-up"></i>';
+} else if (key_change_droppedCalls < 0) {
+    document.getElementById('key_symbol_droppedCalls').innerHTML = '<i class="fas fa-2x fa-sort-down"></i>';
 } else {
-    document.getElementById('key_symbol_failedCalls').innerHTML = '<i class="fas fa-1x fa-equals"></i>';
+    document.getElementById('key_symbol_droppedCalls').innerHTML = '<i class="fas fa-1x fa-equals"></i>';
 }
 
 /* Extra Info Cards */
@@ -56,12 +56,12 @@ var extra_matchedCalls = (json_data.calls_by_type.total_to_date.call_match_home 
 var extra_notMatchedCalls = (json_data.calls_by_type.total_to_date.call_no_match);
 var extra_bookings = (json_data.calls_by_type.total_to_date.call_collection_booked);
 var extra_notBooked = (json_data.calls_by_type.total_to_date.call_collection_not_booked);
-var extra_failures = (json_data.calls_by_type.total_to_date.call_failure);
+var extra_dropped = (json_data.calls_by_type.total_to_date.call_failure);
 document.getElementById('extra_matchedCalls').innerHTML = extra_matchedCalls;
 document.getElementById('extra_notMatchedCalls').innerHTML = extra_notMatchedCalls;
 document.getElementById('extra_bookings').innerHTML = extra_bookings;
 document.getElementById('extra_notBooked').innerHTML = extra_notBooked;
-document.getElementById('extra_failures').innerHTML = extra_failures;
+document.getElementById('extra_dropped').innerHTML = extra_dropped;
 
 
 
@@ -138,7 +138,7 @@ var barChartCallOutcomes = new Chart(ctx_bc1, {
         labels: [
             'Collection Booked',
             'Collection Not Booked',
-            'Call Failure'
+            'Dropped Calls'
         ],
         datasets: [
             {
@@ -336,9 +336,9 @@ bookingsGradient_dc1.addColorStop(1.000, '#00c9ffe6');
 var notBookedGradient_dc1 = ctx_dc1.createLinearGradient(150.000, 0.000, 150.000, 300.000);
 notBookedGradient_dc1.addColorStop(0.000, '#76c4e2e6');
 notBookedGradient_dc1.addColorStop(1.000, '#8176b5e6');
-var failuresGradient_dc1 = ctx_dc1.createLinearGradient(150.000, 0.000, 150.000, 300.000);
-failuresGradient_dc1.addColorStop(0.000, '#ff9a44e6');
-failuresGradient_dc1.addColorStop(1.000, '#fc6076e6');
+var droppedGradient_dc1 = ctx_dc1.createLinearGradient(150.000, 0.000, 150.000, 300.000);
+droppedGradient_dc1.addColorStop(0.000, '#ff9a44e6');
+droppedGradient_dc1.addColorStop(1.000, '#fc6076e6');
 var callBookings_Doughnut = new Chart(ctx_dc1, {
     type: 'doughnut',
     data: {
@@ -346,19 +346,19 @@ var callBookings_Doughnut = new Chart(ctx_dc1, {
             data: [
                 extra_bookings,
                 extra_notBooked,
-                extra_failures
+                extra_dropped
             ],
             backgroundColor: [
                 bookingsGradient_dc1,
                 notBookedGradient_dc1,
-                failuresGradient_dc1
+                droppedGradient_dc1
             ]
         }
         ],
         labels: [
             'Coll Booked',
             'Coll Not Booked',
-            'Failure'
+            'Dropped Calls'
         ]
     },
     options: {
