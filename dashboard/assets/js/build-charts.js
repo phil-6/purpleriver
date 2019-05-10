@@ -12,19 +12,20 @@ var json_data = (function () {
     return json_data;
 })();
 
+var days_in_month = 30;
 
 /* Last Updated Date */
 document.getElementById('last_updated').innerHTML = json_data.last_update_date + " at " + json_data.last_update_time;
 
 /* Key Info Cards */
 document.getElementById('key_totalCalls').innerHTML = json_data.global_calls.total_calls;
-document.getElementById('key_callsThisMonth').innerHTML = (json_data.global_calls.total_calls - json_data.global_calls.monthly_calls_last);
+document.getElementById('key_callsThisMonth').innerHTML = json_data.global_calls.monthly_calls_current;
 document.getElementById('key_collectionsBooked').innerHTML = json_data.calls_by_type.total_this_month.call_collection_booked;
 document.getElementById('key_droppedCalls').innerHTML = json_data.calls_by_type.total_this_month.call_failure;
 
-var key_change_callsThisMonth = ((json_data.global_calls.total_calls - json_data.global_calls.monthly_calls_last) - json_data.global_calls.monthly_calls_last);
-var key_change_collectionsBooked = (json_data.calls_by_type.total_this_month.call_collection_booked - json_data.calls_by_type.total_last_month.call_collection_booked);
-var key_change_droppedCalls = (json_data.calls_by_type.total_this_month.call_failure - json_data.calls_by_type.total_last_month.call_failure);
+var key_change_callsThisMonth = Math.round(json_data.global_calls.monthly_calls_current - ((json_data.global_calls.monthly_calls_last/days_in_month)*(json_data.last_update_date.substring(0, 2))));
+var key_change_collectionsBooked = Math.round(json_data.calls_by_type.total_this_month.call_collection_booked - ((json_data.calls_by_type.total_last_month.call_collection_booked/days_in_month)*(json_data.last_update_date.substring(0, 2))));
+var key_change_droppedCalls = Math.round(json_data.calls_by_type.total_this_month.call_failure - ((json_data.calls_by_type.total_last_month.call_failure/days_in_month)*(json_data.last_update_date.substring(0, 2))));
 document.getElementById('key_change_callsThisMonth').innerHTML = key_change_callsThisMonth;
 document.getElementById('key_change_collectionsBooked').innerHTML = key_change_collectionsBooked;
 document.getElementById('key_change_droppedCalls').innerHTML = key_change_droppedCalls;

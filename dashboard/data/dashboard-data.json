@@ -5,8 +5,11 @@
   "global_calls": {
     "total_calls": 88,
     "annual_calls_last": 0,
+    "annual_calls_current": 0,
     "monthly_calls_last": 73,
+    "monthly_calls_current": 0,
     "weekly_calls_last": 0,
+    "weekly_calls_current": 0,
     "calls_by_month": {
       "call_match": {
         "jan": 25,
