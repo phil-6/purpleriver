@@ -231,18 +231,18 @@ var lineChartAnnualCalls = new Chart(ctx_lc0, {
             backgroundColor: notMatchedGradient_lc0,
             borderColor: '#ff9a44',
             data: [
-                json_data.global_calls.calls_by_month.total_calls.jan,
-                json_data.global_calls.calls_by_month.total_calls.feb,
-                json_data.global_calls.calls_by_month.total_calls.mar,
-                json_data.global_calls.calls_by_month.total_calls.apr,
-                json_data.global_calls.calls_by_month.total_calls.may,
-                json_data.global_calls.calls_by_month.total_calls.jun,
-                json_data.global_calls.calls_by_month.total_calls.jul,
-                json_data.global_calls.calls_by_month.total_calls.aug,
-                json_data.global_calls.calls_by_month.total_calls.sep,
-                json_data.global_calls.calls_by_month.total_calls.oct,
-                json_data.global_calls.calls_by_month.total_calls.nov,
-                json_data.global_calls.calls_by_month.total_calls.dec
+                json_data.global_calls.calls_by_month.call_no_match.jan,
+                json_data.global_calls.calls_by_month.call_no_match.feb,
+                json_data.global_calls.calls_by_month.call_no_match.mar,
+                json_data.global_calls.calls_by_month.call_no_match.apr,
+                json_data.global_calls.calls_by_month.call_no_match.may,
+                json_data.global_calls.calls_by_month.call_no_match.jun,
+                json_data.global_calls.calls_by_month.call_no_match.jul,
+                json_data.global_calls.calls_by_month.call_no_match.aug,
+                json_data.global_calls.calls_by_month.call_no_match.sep,
+                json_data.global_calls.calls_by_month.call_no_match.oct,
+                json_data.global_calls.calls_by_month.call_no_match.nov,
+                json_data.global_calls.calls_by_month.call_no_match.dec
             ]
         }]
     },
@@ -263,6 +263,7 @@ var lineChartAnnualCalls = new Chart(ctx_lc0, {
         scales: {
             xAxes: [{
                 display: true,
+                stacked: true,
                 scaleLabel: {
                     display: true,
                     labelString: 'Month'
@@ -270,6 +271,7 @@ var lineChartAnnualCalls = new Chart(ctx_lc0, {
             }],
             yAxes: [{
                 display: true,
+                stacked: true,
                 scaleLabel: {
                     display: true,
                     labelString: 'Value'
