@@ -37,13 +37,7 @@ var chartColors = {
     light : '#F5F5F5',
     dark : '#1b2126'
 };
-/* Change colors depending on whether or not dark-mode is on */
 var contrastColor;
-if ((document.getElementsByTagName("BODY")[0].className) === 'dark-mode') {
-    contrastColor = chartColors.light;
-} else {
-    contrastColor = chartColors.dark;
-}
 
 
 /*
@@ -176,6 +170,14 @@ Build All Charts
 function buildCharts() {
     getData();
     processData();
+    /* Change colors depending on whether or not dark-mode is on */
+
+    if ((document.getElementsByTagName("BODY")[0].className) === 'dark-mode') {
+        contrastColor = chartColors.light;
+    } else {
+        contrastColor = chartColors.dark;
+    }
+
     /*
     Create Bar Chart - Call Matches
     */
