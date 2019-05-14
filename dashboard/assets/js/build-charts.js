@@ -45,17 +45,18 @@ var extra_dropped = (json_data.calls_by_type.total_to_date.call_failure);
 /*
 Colors
 */
-var dark_orange = '#f69259e6';
-var light_orange = '#ffdb6fe6' ;
-var purple = '#8176b5e6';
-var purple_blue = '#76c4e2e6' ;
-var green = '#92fe9de6' ;
-var green_blue = '#00c9ffe6' ;
-var green_blue_solid ='#00c9ff' ;
-var red = '#fc6076e6' ;
-var red_orange = '#ff9a44e6' ;
-var red_orange_solid = '#ff9a44' ;
-
+var chartColors = {
+    dark_orange: '#f69259e6',
+    light_orange: '#ffdb6fe6',
+    purple: '#8176b5e6',
+    purple_blue: '#76c4e2e6',
+    green: '#92fe9de6',
+    green_blue: '#00c9ffe6',
+    green_blue_solid: '#00c9ff',
+    red: '#fc6076e6',
+    red_orange: '#ff9a44e6',
+    red_orange_solid: '#ff9a44'
+};
 
 /*
 Set Last Updated Date and Time
@@ -111,11 +112,11 @@ Create Bar Chart - Call Matches
 */
 var ctx_bc0 = document.getElementById('barChartCallMatches').getContext('2d');
 var lastMonthGradient_bc0 = ctx_bc0.createLinearGradient(150.000, 0.000, 150.000, 300.000);
-lastMonthGradient_bc0.addColorStop(0.000, light_orange);
-lastMonthGradient_bc0.addColorStop(1.000, dark_orange);
+lastMonthGradient_bc0.addColorStop(0.000, chartColors.light_orange);
+lastMonthGradient_bc0.addColorStop(1.000, chartColors.dark_orange);
 var thisMonthGradient_bc0 = ctx_bc0.createLinearGradient(150.000, 0.000, 150.000, 300.000);
-thisMonthGradient_bc0.addColorStop(0.000, purple);
-thisMonthGradient_bc0.addColorStop(1.000, purple_blue);
+thisMonthGradient_bc0.addColorStop(0.000, chartColors.purple);
+thisMonthGradient_bc0.addColorStop(1.000, chartColors.purple_blue);
 var barChartCallMatches = new Chart(ctx_bc0, {
     type: 'bar',
     data: {
@@ -173,11 +174,11 @@ Create Bar Chart - Call Outcomes
 */
 var ctx_bc1 = document.getElementById('barChartCallOutcomes').getContext('2d');
 var lastMonthGradient_bc1 = ctx_bc1.createLinearGradient(150.000, 0.000, 150.000, 300.000);
-lastMonthGradient_bc1.addColorStop(0.000, light_orange);
-lastMonthGradient_bc1.addColorStop(1.000, dark_orange);
+lastMonthGradient_bc1.addColorStop(0.000, chartColors.light_orange);
+lastMonthGradient_bc1.addColorStop(1.000, chartColors.dark_orange);
 var thisMonthGradient_bc1 = ctx_bc1.createLinearGradient(150.000, 0.000, 150.000, 300.000);
-thisMonthGradient_bc1.addColorStop(0.000, purple);
-thisMonthGradient_bc1.addColorStop(1.000, purple_blue);
+thisMonthGradient_bc1.addColorStop(0.000, chartColors.purple);
+thisMonthGradient_bc1.addColorStop(1.000, chartColors.purple_blue);
 var barChartCallOutcomes = new Chart(ctx_bc1, {
     type: 'bar',
     data: {
@@ -232,11 +233,11 @@ Create Line Chart showing annual calls
 */
 var ctx_lc0 = document.getElementById('lineChartAnnualCalls').getContext('2d');
 var matchedCallsGradient_lc0 = ctx_lc0.createLinearGradient(0.000, 50.000, 300.000, 250.000);
-matchedCallsGradient_lc0.addColorStop(0.000, green);
-matchedCallsGradient_lc0.addColorStop(1.000, green_blue);
+matchedCallsGradient_lc0.addColorStop(0.000, chartColors.green);
+matchedCallsGradient_lc0.addColorStop(1.000, chartColors.green_blue);
 var notMatchedGradient_lc0 = ctx_lc0.createLinearGradient(150.000, 0.000, 150.000, 300.000);
-notMatchedGradient_lc0.addColorStop(0.000, red);
-notMatchedGradient_lc0.addColorStop(1.000, red_orange);
+notMatchedGradient_lc0.addColorStop(0.000, chartColors.red);
+notMatchedGradient_lc0.addColorStop(1.000, chartColors.red_orange);
 var lineChartAnnualCalls = new Chart(ctx_lc0, {
     type: 'line',
     data: {
@@ -258,7 +259,7 @@ var lineChartAnnualCalls = new Chart(ctx_lc0, {
             label: 'Matched Calls',
             fill: 'start',
             backgroundColor: matchedCallsGradient_lc0,
-            borderColor: green_blue_solid,
+            borderColor: chartColors.green_blue_solid,
             data: [
                 json_data.global_calls.calls_by_month.call_match.jan,
                 json_data.global_calls.calls_by_month.call_match.feb,
@@ -277,7 +278,7 @@ var lineChartAnnualCalls = new Chart(ctx_lc0, {
             label: 'Not Matched Calls',
             fill: '-1',
             backgroundColor: notMatchedGradient_lc0,
-            borderColor: red_orange_solid,
+            borderColor: chartColors.red_orange_solid,
             data: [
                 json_data.global_calls.calls_by_month.call_no_match.jan,
                 json_data.global_calls.calls_by_month.call_no_match.feb,
@@ -336,11 +337,11 @@ Create Doughnut Chart split of call matches
 */
 var ctx_dc0 = document.getElementById('callMatches_Doughnut').getContext('2d');
 var callMatchesGradient_dc0 = ctx_dc0.createLinearGradient(0.000, 50.000, 300.000, 250.000);
-callMatchesGradient_dc0.addColorStop(0.000, green);
-callMatchesGradient_dc0.addColorStop(1.000, green_blue);
+callMatchesGradient_dc0.addColorStop(0.000, chartColors.green);
+callMatchesGradient_dc0.addColorStop(1.000, chartColors.green_blue);
 var notMatchedGradient_dc0 = ctx_dc0.createLinearGradient(150.000, 0.000, 150.000, 300.000);
-notMatchedGradient_dc0.addColorStop(0.000, red);
-notMatchedGradient_dc0.addColorStop(1.000, red_orange);
+notMatchedGradient_dc0.addColorStop(0.000, chartColors.red);
+notMatchedGradient_dc0.addColorStop(1.000, chartColors.red_orange);
 var callMatches_Doughnut = new Chart(ctx_dc0, {
     type: 'doughnut',
     data: {
@@ -385,14 +386,14 @@ Create Doughnut Chart split of bookings
 */
 var ctx_dc1 = document.getElementById('callBookings_Doughnut').getContext('2d');
 var bookingsGradient_dc1 = ctx_dc1.createLinearGradient(0.000, 50.000, 300.000, 250.000);
-bookingsGradient_dc1.addColorStop(0.000, green);
-bookingsGradient_dc1.addColorStop(1.000, green_blue);
+bookingsGradient_dc1.addColorStop(0.000, chartColors.green);
+bookingsGradient_dc1.addColorStop(1.000, chartColors.green_blue);
 var notBookedGradient_dc1 = ctx_dc1.createLinearGradient(150.000, 0.000, 150.000, 300.000);
-notBookedGradient_dc1.addColorStop(0.000, purple_blue);
-notBookedGradient_dc1.addColorStop(1.000, purple);
+notBookedGradient_dc1.addColorStop(0.000, chartColors.purple_blue);
+notBookedGradient_dc1.addColorStop(1.000, chartColors.purple);
 var droppedGradient_dc1 = ctx_dc1.createLinearGradient(150.000, 0.000, 150.000, 300.000);
-droppedGradient_dc1.addColorStop(0.000, red_orange);
-droppedGradient_dc1.addColorStop(1.000, red);
+droppedGradient_dc1.addColorStop(0.000, chartColors.red_orange);
+droppedGradient_dc1.addColorStop(1.000, chartColors.red);
 var callBookings_Doughnut = new Chart(ctx_dc1, {
     type: 'doughnut',
     data: {
