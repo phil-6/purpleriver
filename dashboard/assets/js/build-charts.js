@@ -59,6 +59,7 @@ function toggleDarkMode () {
     } else {
         alert("Somethings gone wrong with the theme, Sorry!")
     }
+    buildCharts();
 }
 
 /*
