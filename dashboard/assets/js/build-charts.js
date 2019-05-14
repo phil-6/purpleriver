@@ -1,7 +1,24 @@
 /**
  * Get data from dashboard-data.json, perform some processing and build charts
+ * Also include Dark-Mode function
  */
 
+
+/*
+Dark Mode Toggle
+ */
+
+function toggleDarkMode () {
+    if ((document.getElementsByTagName("BODY")[0].className) === 'light-mode') {
+        document.getElementsByTagName("BODY")[0].classList.add('dark-mode');
+        document.getElementsByTagName("BODY")[0].classList.remove('light-mode');
+    } else if ((document.getElementsByTagName("BODY")[0].className) === 'dark-mode') {
+        document.getElementsByTagName("BODY")[0].classList.add('light-mode');
+        document.getElementsByTagName("BODY")[0].classList.remove('dark-mode');
+    } else {
+        alert("Somethings gone wrong with the theme, Sorry!")
+    }
+}
 
 /*
 Get Data from json
@@ -55,8 +72,18 @@ var chartColors = {
     green_blue_solid: '#00c9ff',
     red: '#fc6076e6',
     red_orange: '#ff9a44e6',
-    red_orange_solid: '#ff9a44'
+    red_orange_solid: '#ff9a44',
+    light : '#F5F5F5',
+    dark : '#1b2126'
 };
+
+/* Change colors depending on whether or not dark-mode is on */
+var contrastColor;
+if ((document.getElementsByTagName("BODY")[0].className) === 'dark-mode') {
+    contrastColor = chartColors.light;
+} else {
+    contrastColor = chartColors.dark;
+}
 
 /*
 Set Last Updated Date and Time
@@ -157,13 +184,33 @@ var barChartCallMatches = new Chart(ctx_bc0, {
         scales: {
             yAxes: [{
                 ticks: {
-                    beginAtZero: true
+                    beginAtZero: true,
+                    fontColor: contrastColor
+                },
+                gridLines: {
+                    color: contrastColor
+                }
+            }],
+            xAxes: [{
+                ticks: {
+                    beginAtZero: true,
+                    fontColor: contrastColor
+                },
+                gridLines: {
+                    color: contrastColor
                 }
             }]
         },
+        legend: {
+            position: 'top',
+            labels: {
+                fontColor: contrastColor
+            }
+        },
         title: {
             display: true,
-            text: 'Call Matches'
+            text: 'Call Matches',
+            fontColor: contrastColor
         }
     }
 });
@@ -216,13 +263,33 @@ var barChartCallOutcomes = new Chart(ctx_bc1, {
         scales: {
             yAxes: [{
                 ticks: {
-                    beginAtZero: true
+                    beginAtZero: true,
+                    fontColor: contrastColor
+                },
+                gridLines: {
+                    color: contrastColor
+                }
+            }],
+            xAxes: [{
+                ticks: {
+                    beginAtZero: true,
+                    fontColor: contrastColor
+                },
+                gridLines: {
+                    color: contrastColor
                 }
             }]
         },
+        legend: {
+            position: 'top',
+            labels: {
+                fontColor: contrastColor
+            }
+        },
         title: {
             display: true,
-            text: 'Call Outcomes'
+            text: 'Call Outcomes',
+            fontColor: contrastColor
         }
     }
 });
@@ -299,7 +366,14 @@ var lineChartAnnualCalls = new Chart(ctx_lc0, {
         responsive: true,
         title: {
             display: true,
-            text: 'Calls Per Month'
+            text: 'Calls Per Month',
+            fontColor: contrastColor
+        },
+        legend: {
+            position: 'top',
+            labels: {
+                fontColor: contrastColor
+            }
         },
         tooltips: {
             mode: 'index',
@@ -315,7 +389,14 @@ var lineChartAnnualCalls = new Chart(ctx_lc0, {
                 stacked: true,
                 scaleLabel: {
                     display: true,
-                    labelString: 'Month'
+                    labelString: 'Month',
+                    fontColor: contrastColor
+                },
+                ticks: {
+                    fontColor: contrastColor
+                },
+                gridLines: {
+                    color: contrastColor
                 }
             }],
             yAxes: [{
@@ -323,7 +404,14 @@ var lineChartAnnualCalls = new Chart(ctx_lc0, {
                 stacked: true,
                 scaleLabel: {
                     display: true,
-                    labelString: 'Value'
+                    labelString: 'Value',
+                    fontColor: contrastColor
+                },
+                ticks: {
+                    fontColor: contrastColor
+                },
+                gridLines: {
+                    color: contrastColor
                 }
             }]
         },
@@ -366,11 +454,15 @@ var callMatches_Doughnut = new Chart(ctx_dc0, {
         responsive: true,
         legend: {
             display: true,
-            position: 'bottom'
+            position: 'bottom',
+            labels: {
+                fontColor: contrastColor
+            }
         },
         title: {
             display: true,
-            text: 'Call Matches'
+            text: 'Call Matches',
+            fontColor: contrastColor
         },
         animation: {
             animateScale: true,
@@ -420,11 +512,15 @@ var callBookings_Doughnut = new Chart(ctx_dc1, {
         responsive: true,
         legend: {
             display: true,
-            position: 'bottom'
+            position: 'bottom',
+            labels: {
+                fontColor: contrastColor
+            }
         },
         title: {
             display: true,
-            text: 'Bookings'
+            text: 'Bookings',
+            fontColor: contrastColor
         },
         animation: {
             animateScale: true,
