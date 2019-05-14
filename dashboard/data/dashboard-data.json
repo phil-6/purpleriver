@@ -7,7 +7,7 @@
     "annual_calls_last": 0,
     "annual_calls_current": 0,
     "monthly_calls_last": 73,
-    "monthly_calls_current": 0,
+    "monthly_calls_current": 40,
     "weekly_calls_last": 0,
     "weekly_calls_current": 0,
     "calls_by_month": {
@@ -72,7 +72,7 @@
       "call_match_alt": 0,
       "call_collection_booked": 2,
       "call_collection_not_booked": 0,
-      "call_failure": 1
+      "call_failure": 2
     },
     "total_last_month": {
       "call_no_match": 61,

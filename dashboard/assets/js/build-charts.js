@@ -63,6 +63,18 @@ function toggleDarkMode () {
 }
 
 /*
+Reload Data
+*/
+
+function reloadData (){
+    getData();
+    processData();
+    buildKeyInfoCards();
+    buildExtraInfoCards();
+    buildCharts();
+}
+
+/*
 Get Data from json
 */
 function getData () {
