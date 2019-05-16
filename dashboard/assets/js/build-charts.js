@@ -34,8 +34,17 @@ var chartColors = {
     red: '#fc6076e6',
     red_orange: '#ff9a44e6',
     red_orange_solid: '#ff9a44',
-    light : '#F5F5F5',
-    dark : '#1b2126'
+    light : {
+        text : '#F5F5F5',
+        gridlines : '#F5F5F5e6',
+        pie_borders: '#696969'
+    },
+    dark : {
+        text_black : '#1b2126',
+        text : '#626567',
+        gridlines : '#E5E7E9',
+        pie_borders: '#fff'
+    }
 };
 var contrastColor;
 
@@ -229,32 +238,35 @@ function buildCharts() {
                 yAxes: [{
                     ticks: {
                         beginAtZero: true,
-                        fontColor: contrastColor
+                        fontColor: contrastColor.text
                     },
                     gridLines: {
-                        color: contrastColor
+                        color: contrastColor.gridlines,
+                        zeroLineColor: contrastColor.gridlines
                     }
                 }],
                 xAxes: [{
                     ticks: {
                         beginAtZero: true,
-                        fontColor: contrastColor
+                        fontColor: contrastColor.text
                     },
                     gridLines: {
-                        color: contrastColor
+                        color: contrastColor.gridlines,
+                        axisColor: contrastColor.gridlines,
+                        zeroLineColor: contrastColor.gridlines
                     }
                 }]
             },
             legend: {
                 position: 'top',
                 labels: {
-                    fontColor: contrastColor
+                    fontColor: contrastColor.text
                 }
             },
             title: {
                 display: true,
                 text: 'Call Matches',
-                fontColor: contrastColor
+                fontColor: contrastColor.text
             }
         }
     });
@@ -308,32 +320,33 @@ function buildCharts() {
                 yAxes: [{
                     ticks: {
                         beginAtZero: true,
-                        fontColor: contrastColor
+                        fontColor: contrastColor.text
                     },
                     gridLines: {
-                        color: contrastColor
+                        color: contrastColor.gridlines,
+                        zeroLineColor: contrastColor.gridlines
                     }
                 }],
                 xAxes: [{
                     ticks: {
                         beginAtZero: true,
-                        fontColor: contrastColor
+                        fontColor: contrastColor.text
                     },
                     gridLines: {
-                        color: contrastColor
+                        color: contrastColor.gridlines
                     }
                 }]
             },
             legend: {
                 position: 'top',
                 labels: {
-                    fontColor: contrastColor
+                    fontColor: contrastColor.text
                 }
             },
             title: {
                 display: true,
                 text: 'Call Outcomes',
-                fontColor: contrastColor
+                fontColor: contrastColor.text
             }
         }
     });
@@ -411,12 +424,12 @@ function buildCharts() {
             title: {
                 display: true,
                 text: 'Calls Per Month',
-                fontColor: contrastColor
+                fontColor: contrastColor.text
             },
             legend: {
                 position: 'top',
                 labels: {
-                    fontColor: contrastColor
+                    fontColor: contrastColor.text
                 }
             },
             tooltips: {
@@ -434,13 +447,13 @@ function buildCharts() {
                     scaleLabel: {
                         display: true,
                         labelString: 'Month',
-                        fontColor: contrastColor
+                        fontColor: contrastColor.text
                     },
                     ticks: {
-                        fontColor: contrastColor
+                        fontColor: contrastColor.text
                     },
                     gridLines: {
-                        color: contrastColor
+                        color: contrastColor.gridlines
                     }
                 }],
                 yAxes: [{
@@ -449,13 +462,14 @@ function buildCharts() {
                     scaleLabel: {
                         display: true,
                         labelString: 'Value',
-                        fontColor: contrastColor
+                        fontColor: contrastColor.text
                     },
                     ticks: {
-                        fontColor: contrastColor
+                        fontColor: contrastColor.text
                     },
                     gridLines: {
-                        color: contrastColor
+                        color: contrastColor.gridlines,
+                        zeroLineColor: contrastColor.gridlines
                     }
                 }]
             },
@@ -500,19 +514,24 @@ function buildCharts() {
                 display: true,
                 position: 'bottom',
                 labels: {
-                    fontColor: contrastColor
+                    fontColor: contrastColor.text
                 }
             },
             title: {
                 display: true,
                 text: 'Call Matches',
-                fontColor: contrastColor
+                fontColor: contrastColor.text
             },
             animation: {
                 animateScale: true,
                 animateRotate: true
             },
-            aspectRatio: 1
+            aspectRatio: 1,
+            elements: {
+                arc: {
+                    borderColor: contrastColor.pie_borders
+                }
+            }
         }
     });
 
@@ -558,19 +577,24 @@ function buildCharts() {
                 display: true,
                 position: 'bottom',
                 labels: {
-                    fontColor: contrastColor
+                    fontColor: contrastColor.text
                 }
             },
             title: {
                 display: true,
                 text: 'Bookings',
-                fontColor: contrastColor
+                fontColor: contrastColor.text
             },
             animation: {
                 animateScale: true,
                 animateRotate: true
             },
-            aspectRatio: 1
+            aspectRatio: 1,
+            elements: {
+                arc: {
+                    borderColor: contrastColor.pie_borders
+                }
+            }
         }
     });
 }
