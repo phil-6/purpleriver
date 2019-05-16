@@ -1,3 +1,17 @@
+:root {
+    --header-bg-fallback: #1e3c72;
+    --header-bg: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);
+    --header-text: whitesmoke;
+    --key-info-card-text: white;
+    --light-bg: whitesmoke;
+    --light-card-bg: white;
+    --light-card-text: #76c4e2;
+    --dark-bg: dimgray;
+    --dark-card-bg: slategray;
+    --dark-card-text: whitesmoke;
+}
+
+
 h1, h2, h3, h4, h5, .key-number, .extra-number {
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 700;
@@ -17,26 +31,29 @@ h3 {
 h4 {
     font-size: 0.8rem;
     /*display: inline;*/
-
 }
 body {
     font-family: 'Krub', sans-serif;
 }
 .light-mode {
-    background-color: whitesmoke;
+    background-color: var(--light-bg);
+}
+.light-mode canvas, .light-mode .extra-info-card{
+    color: var(--light-card-text);
+    background-color: var(--light-card-bg);
 }
 .dark-mode {
-    background-color: dimgray;
+    background-color: var(--dark-bg);
 }
 .dark-mode canvas, .dark-mode .extra-info-card{
-    background-color: slategray;
-    color: whitesmoke;
+    color: var(--dark-card-text);
+    background-color: var(--dark-card-bg);
 }
 header {
     padding: 10px;
-    background-color: #1e3c72;
-    background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);
-    color: whitesmoke;
+    background-color: var(--header-bg-fallback);
+    background-image: var(--header-bg);
+    color: var(--header-text);
 }
 h3 a {
     text-decoration: none;
@@ -62,10 +79,7 @@ h3 a:hover .fas{
 .chart {
     position: relative;
     margin: 15px 5px 15px 5px;
-    background-color: white;
     border-radius: 5px;
-}
-.full-width-chart {
 }
 
 .key-info-row{
@@ -73,7 +87,7 @@ h3 a:hover .fas{
 }
 .key-info-card{
     height: 150px;
-    color: white;
+    color: var(--key-info-card-text);
     padding: 15px 50px 15px 50px;
 }
 .key-info-card .key-number {
@@ -102,8 +116,6 @@ h3 a:hover .fas{
 
 .extra-info-card {
     text-align: center;
-    color: #76c4e2;
-    background-color: white;
     border-radius: 5px;
     margin: 15px 5px 15px 5px;
     padding: 10px
