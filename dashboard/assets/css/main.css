@@ -1,21 +1,20 @@
 :root {
     --header-bg-fallback: #1e3c72;
     --header-bg: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);
-    --header-text: whitesmoke;
-    --key-info-card-text: white;
-    --light-bg: whitesmoke;
+    --light-h-text: white;
+    --light-bg: #f5f5f5;
     --light-card-bg: white;
     --light-card-text: #76c4e2;
-    --dark-bg: dimgray;
-    --dark-card-bg: slategray;
-    --dark-card-text: whitesmoke;
+    --dark-h-text: #1b2126;
+    --dark-bg: #212121;
+    --dark-card-bg: #424242;
+    --dark-card-text: #DCDCDC;
 }
 
 
 h1, h2, h3, h4, h5, .key-number, .extra-number {
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 700;
-    /*color: #1b2126*/
 }
 h1 {
     font-size: 3.5rem;
@@ -38,12 +37,18 @@ body {
 .light-mode {
     background-color: var(--light-bg);
 }
+.light-mode header, .light-mode .key-info-card{
+    color: var(--light-h-text);
+}
 .light-mode canvas, .light-mode .extra-info-card{
     color: var(--light-card-text);
     background-color: var(--light-card-bg);
 }
 .dark-mode {
     background-color: var(--dark-bg);
+}
+.dark-mode header, .dark-mode .key-info-card {
+    color: var(--dark-h-text);
 }
 .dark-mode canvas, .dark-mode .extra-info-card{
     color: var(--dark-card-text);
@@ -53,7 +58,6 @@ header {
     padding: 10px;
     background-color: var(--header-bg-fallback);
     background-image: var(--header-bg);
-    color: var(--header-text);
 }
 h3 a {
     text-decoration: none;
@@ -87,7 +91,6 @@ h3 a:hover .fas{
 }
 .key-info-card{
     height: 150px;
-    color: var(--key-info-card-text);
     padding: 15px 50px 15px 50px;
 }
 .key-info-card .key-number {

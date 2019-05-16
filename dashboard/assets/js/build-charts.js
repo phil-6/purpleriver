@@ -35,9 +35,9 @@ var chartColors = {
     red_orange: '#ff9a44e6',
     red_orange_solid: '#ff9a44',
     light : {
-        text : '#F5F5F5',
-        gridlines : '#F5F5F5e6',
-        pie_borders: '#696969'
+        text : '#DCDCDC',
+        gridlines : '#808080',
+        pie_borders: '#424242'
     },
     dark : {
         text_black : '#1b2126',
