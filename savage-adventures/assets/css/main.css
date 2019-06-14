@@ -1,0 +1,61 @@
+:root {
+
+    /*theme colors*/
+
+    --blue: #5184b4;
+    --blue-dark: #174a7a;
+    --blue-gradient: linear-gradient(to top, #5184b4 0%, #174a7a 50%, #002050 100%);
+
+    --green: #18b600;
+    --green-dark: #007200;
+    --green-gradient: linear-gradient(to top, #18b600 0%, #008f00 50%, #007200 100%);
+
+    --yellow: #f0ac00;
+    --yellow-dark: #d08d00;
+    --yellow-gradient: linear-gradient(to top, #f0ac00 0%, #d08d00 100%);
+
+    --red: #970000;
+    --red-dark: #680000;
+    --red-gradient: linear-gradient(to top, #970000 0%, #800000 50%, #680000 100%);
+
+    --savage-bg-fallback: #5184b4;
+    --savage-bg: linear-gradient(135deg, #ff3300 0%, #ff5100 5%, #e97a15 20%, #76a088 40%, #00c8ff 100%);
+
+    --ink: #000021;
+
+}
+
+
+h1, h2, h3, h4, h5, .key-number, .extra-number {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 700;
+}
+h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0;
+}
+h2 {
+    font-size: 2.5rem;
+}
+h3 {
+    font-size: 1rem;
+    display: inline;
+}
+h4 {
+    font-size: 0.8rem;
+    /*display: inline;*/
+}
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    font-family: 'Krub', sans-serif;
+}
+header {
+    height: 100%;
+    width: 100%;
+    /*background-image: var(--savage-bg);*/
+    background-image: url("../images/Background.bmp");
+    background-size:cover;
+}
