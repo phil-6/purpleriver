@@ -2,7 +2,7 @@
 
     /*theme colors*/
 
-    --blue: #5184b4;
+    --blue: #00c8ff;
     --blue-dark: #174a7a;
     --blue-gradient: linear-gradient(to top, #5184b4 0%, #174a7a 50%, #002050 100%);
 
@@ -18,7 +18,7 @@
     --red-dark: #680000;
     --red-gradient: linear-gradient(to top, #970000 0%, #800000 50%, #680000 100%);
 
-    --savage-bg-fallback: #5184b4;
+    --savage-bg-fallback: #00c8ff;
     --savage-bg: linear-gradient(135deg, #ff3300 0%, #ff5100 5%, #e97a15 20%, #76a088 40%, #00c8ff 100%);
 
     --ink: #000021;
@@ -55,7 +55,11 @@ body {
 header {
     height: 100%;
     width: 100%;
-    /*background-image: var(--savage-bg);*/
-    background-image: url("../images/Background.bmp");
+    background: var(--savage-bg);
+    /*background-image: url("../images/Background.bmp");*/
     background-size:cover;
+}
+.site-logo {
+    max-height: 260px;
+    object-fit: contain;
 }
