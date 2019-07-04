@@ -30,6 +30,13 @@
 
     --savage-bg-fallback: #00c8ff;
     --savage-bg: linear-gradient(135deg, #ff3300 0%, #ff5100 5%, #e97a15 20%, #76a088 40%, #00c8ff 100%);
+    --savage-bg-to-top: linear-gradient(to top, #ff3300 0%, #ff5100 5%, #e97a15 20%, #76a088 40%, #00c8ff 100%);
+
+    --light-gradient-blue: linear-gradient(to bottom, #0575E6, #021B79);
+    --light-gradient-purple: linear-gradient(to bottom, #8E2DE2, #4A00E0);
+    --light-gradient-pink: linear-gradient(to bottom, #ef32d9, #89fffd);
+    --light-gradient-green: linear-gradient(to bottom, #43C6AC, #191654);
+
 
     --ink: #000021;
     --ink-light: #606074;
@@ -149,12 +156,53 @@ header {
 .upcoming-events h1{
 
 }
-.upcoming-events .card{
+.upcoming-events .card, .our-team .card {
     border: none;
 }
-.upcoming-events .card img{
+.upcoming-events .card img {
     max-height: 250px;
     object-fit: cover;
 }
 
+
+.company-description{
+    max-width: 900px;
+    text-align: justify;
+    font-weight: 100;
+    font-size: 1.3rem;
+    color: white;
+}
+
+.our-team {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.our-team .card {
+    max-width: 360px;
+    color: white;
+    background: var(--savage-bg-to-top);
+}
+.our-team .card h1, .our-team .card h3{
+    text-align: center;
+}
+.our-team .card h1, .our-team .card h3, .our-team .card p {
+    margin: 15px;
+}
+.our-team .card img {
+    max-height: 250px;
+    /*max-width: 360px;*/
+    object-fit: cover;
+}
+/*.our-team .card.peter{
+    background: var(--savage-bg);
+}
+.our-team .card.simon {
+    background: var(--light-gradient-green);
+}
+.our-team .card.phil {
+    background: var(--light-gradient-purple);
+}
+.our-team .card.beckii {
+    background: var(--light-gradient-pink);
+}*/
 
