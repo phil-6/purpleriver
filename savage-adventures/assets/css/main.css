@@ -25,33 +25,32 @@
 
 }
 
-
-h1, h2, h3, h4, h5, .key-number, .extra-number {
-    font-family: 'Josefin Sans', sans-serif;
-    font-weight: 700;
+/*Typography*/
+/*100,300,400,900*/
+h1, h2, h3, .display-heading {
+    font-family: 'Permanent Marker', cursive;
 }
-h1 {
-    font-size: 3.5rem;
-    margin-bottom: 0;
+h4, h5, h6 {
+    font-family: 'raleway', sans-serif;
 }
-h2 {
-    font-size: 2.5rem;
-}
-h3 {
+h5 {
+    font-weight: 400;
     font-size: 1rem;
-    display: inline;
 }
-h4 {
-    font-size: 0.8rem;
-    /*display: inline;*/
+a {
+    color: black;
+}
+a:focus, a:hover {
+    text-decoration: none;
 }
 html {
     /*height: 100%;*/
 }
 body {
     /*height: 100%;*/
-    font-family: 'Krub', sans-serif;
+    font-family: 'raleway', sans-serif;;
     background: var(--savage-bg);
+    color: var(--ink);
 }
 header {
     /*height: 100%;*/
@@ -63,4 +62,27 @@ header {
 .site-logo {
     max-height: 260px;
     object-fit: contain;
+}
+.social-links {
+    padding-top: 20px;
+}
+.social-link {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.social-tripadvisor:hover{
+    color: #00af87;
+}
+.social-facebook:hover{
+    color: #3b5998;
+}
+.social-twitter:hover{
+    color: #1da1f2;
+}
+.social-instagram:hover{
+    color: #003569;
+    opacity: .5;
+}
+.social-youtube:hover{
+    color: #ff0000;
 }
