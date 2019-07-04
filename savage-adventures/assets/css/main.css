@@ -51,11 +51,12 @@ html {
 body {
     height: 100%;
     font-family: 'Krub', sans-serif;
+    background: var(--savage-bg);
 }
 header {
-    height: 100%;
+    /*height: 100%;*/
     width: 100%;
-    background: var(--savage-bg);
+
     /*background-image: url("../images/Background.bmp");*/
     background-size:cover;
 }
