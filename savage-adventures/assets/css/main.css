@@ -108,8 +108,6 @@ header {
 }
 
 
-
-
 .quick-links .card {
     background: var(--savage-bg);
     border: none;
@@ -179,8 +177,16 @@ header {
 }
 .our-team .card {
     max-width: 360px;
+    min-width: 320px;
+    margin: 15px;
     color: white;
     background: var(--savage-bg-to-top);
+}
+@media (max-width: 576px){
+    .our-team .card{
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 .our-team .card h1, .our-team .card h3{
     text-align: center;
