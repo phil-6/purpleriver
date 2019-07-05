@@ -263,6 +263,7 @@ header {
 #bookNowModal .modal-body{
     background-image: url("../images/guide-bex.jpg");
     background-size: cover;
+    background-position: center;
 }
 #bookNowModal .close{
     color: var(--white);
