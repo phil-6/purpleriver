@@ -9,6 +9,7 @@
     --blue-gradient2: linear-gradient(to bottom left, #00B4DB, #0083B0);
 
     --green: #18b600;
+    --green-transparent: #18b600cc;
     --green-dark: #007200;
     --green-gradient: linear-gradient(to bottom, #18b600, #008f00, #007200);
     --green-gradient2: linear-gradient(to bottom, #52c234, #061700);
@@ -22,6 +23,7 @@
     --red: #970000;
     --red-dark: #680000;
     --red-orange: #f83600;
+    --red-orange-transparent: #f83600cc;
     --red-gradient: linear-gradient(to bottom, #970000, #800000, #680000);
     --red-gradient2: linear-gradient(170deg, #fe8c00, #f83600);
 
@@ -89,6 +91,22 @@ header {
 .btn-primary:hover{
     background-color: var(--blue);
     border-color: var(--blue);
+}
+.btn-orange{
+    background-color: var(--red-orange-transparent);
+    border-color: var(--red-orange-transparent);
+}
+.btn-orange:hover{
+    background-color: var(--red-orange);
+    border-color: var(--red-orange);
+}
+.btn-green{
+    background-color: var(--green-transparent);
+    border-color: var(--green-transparent);
+}
+.btn-green:hover{
+    background-color: var(--green);
+    border-color: var(--green);
 }
 
 .site-logo {
@@ -246,13 +264,26 @@ header {
     background: var(--light-gradient-pink);
 }*/
 
-.book-now-button {
+.book-now-button, .find-out-more-button {
+    color: var(--white);
     margin-bottom: 20px;
     box-shadow: 6px 4px 8px 0px rgba(0,0,0,0.4);
 }
-.book-now-button:hover {
+.book-now-button:hover, .find-out-more-button:hover {
+    color: var(--ink-light);
     box-shadow: none;
     transition: all 0.2s;
+}
+
+@media (min-width: 576px) {
+    .adventures-summary {
+        max-width: 80%;
+    }
+}
+
+.adventures-summary .row img{
+    max-width: 400px;
+    max-height: 600px;
 }
 
 /*Book Now Modal*/
