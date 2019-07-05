@@ -112,18 +112,39 @@ header {
     color: #ff0000;
 }
 
-
 .quick-links .card {
     background: var(--savage-bg);
     border: none;
+    margin: 5px;
     max-height: 180px;
     max-width: 180px;
-    min-width: 160px;
+    min-width: 180px;
+}
+.quick-links .card i {
+    font-size: 4.5em;
+}
+.quick-links h5{
+    padding-top: 15px;
+    display: inline-block;
 }
 @media (max-width: 576px){
+    .quick-links .card-deck {
+        flex-flow: row wrap;
+        margin-right: -5px;
+        margin-left: -5px;
+    }
     .quick-links .card{
-        margin-left: auto;
-        margin-right: auto;
+        max-height: 120px;
+        max-width: 120px;
+        min-width: 100px;
+        margin: 5px;
+    }
+    .quick-links .card i {
+        font-size: 2.5em;
+    }
+    .quick-links .card h5{
+        font-size: 0.8rem;
+        padding-top: 5px;
     }
 }
 .quick-links .card.about-us  {
@@ -147,10 +168,7 @@ header {
 .quick-links a:hover{
     opacity: 0.7;
 }
-.quick-links h5{
-    padding-top: 15px;
-    display: inline-block;
-}
+
 
 .upcoming-events {
     padding-top: 50px;
