@@ -91,7 +91,7 @@ header {
     padding-right: 5px;
 }
 @media (max-width: 576px){
-    .social-links, .contact-links{
+     .contact-links{
         display: none;
     }
 }
