@@ -275,7 +275,7 @@ header {
 }
 #bookNowModal .modal-heading-white {
     color: var(--white);
-    margin-top: 50px;
+    margin-top: 15px;
     letter-spacing: 0.2rem;
 }
 #bookNowModal .modal-heading-orange {
@@ -283,7 +283,8 @@ header {
     margin-top: 150px;
 }
 #bookNowModal form {
-    margin-top: 50px;
+    margin-top: 15px;
+    padding: 15px;
 }
 #bookNowModal .form-control {
     margin: 5px;
@@ -316,4 +317,19 @@ header {
     letter-spacing: 0.2rem;
     text-shadow: 0 0 10px rgba(50, 50, 50, 1);
     text-align: right;
+}
+
+@media (max-width: 576px){
+    #bookNowModal .modal-content{
+        min-width: auto;
+    }
+    #bookNowModal .modal-heading-white {
+        margin-top: 10px;
+    }
+    #bookNowModal .modal-heading-orange {
+        margin-top: 15px;
+    }
+    #bookNowModal form {
+        margin-top: 5px;
+    }
 }
