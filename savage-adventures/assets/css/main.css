@@ -3,6 +3,7 @@
     /*theme colors*/
 
     --blue: #00c8ff;
+    --blue-transparent: #00c8ffcc;
     --blue-dark: #174a7a;
     --blue-gradient: linear-gradient(to bottom, #5184b4, #174a7a, #002050);
     --blue-gradient2: linear-gradient(to bottom left, #00B4DB, #0083B0);
@@ -20,6 +21,7 @@
 
     --red: #970000;
     --red-dark: #680000;
+    --red-orange: #f83600;
     --red-gradient: linear-gradient(to bottom, #970000, #800000, #680000);
     --red-gradient2: linear-gradient(170deg, #fe8c00, #f83600);
 
@@ -234,3 +236,66 @@ header {
     background: var(--light-gradient-pink);
 }*/
 
+#bookNowModal .modal-content{
+    min-width: 680px;
+    height: 450px;
+}
+#bookNowModal .modal-body{
+    background-image: url("../images/guide-bex.jpg");
+    background-size: cover;
+}
+#bookNowModal .close{
+    color: var(--white);
+    font-size: 24px;
+    opacity: 1;
+    z-index: 2;
+}
+#bookNowModal .close:hover{
+    opacity: 0.6;
+}
+#bookNowModal .modal-heading-white {
+    color: var(--white);
+    margin-top: 50px;
+    letter-spacing: 0.2rem;
+}
+#bookNowModal .modal-heading-orange {
+    color: var(--red-orange);
+    margin-top: 150px;
+}
+#bookNowModal form {
+    margin-top: 50px;
+}
+#bookNowModal .form-control {
+    margin: 5px;
+    background-color: rgba(252, 252, 252, 0.6);
+    border: 2px solid var(--blue);
+}
+#bookNowModal .form-control:focus {
+    background-color: rgba(252, 252, 252, 0.9);
+}
+#bookNowModal .form-control::placeholder {
+    color: var(--blue-dark);
+}
+#bookNowModal .col.name {
+    padding-left: 0;
+    padding-right: 5px;
+}
+#bookNowModal .col.email {
+    padding-left: 5px;
+    padding-right: 10px;
+}
+#bookNowModal .form-control.message {
+    height: 160px;
+}
+#bookNowModal .btn-primary {
+    background-color: var(--blue-transparent);
+    border-color: var(--blue-transparent);
+    width: 100%;
+    margin: 5px;
+}
+#bookNowModal .thankyou_message {
+    color: var(--blue);
+    letter-spacing: 0.2rem;
+    text-shadow: 0 0 10px rgba(50, 50, 50, 1);
+    text-align: right;
+}
