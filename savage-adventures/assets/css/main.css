@@ -246,7 +246,15 @@ header {
     background: var(--light-gradient-pink);
 }*/
 
-
+.book-now-button {
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 6px 4px 8px 0px rgba(0,0,0,0.4);
+}
+.book-now-button:hover {
+    box-shadow: none;
+    transition: all 0.2s;
+}
 
 /*Book Now Modal*/
 #bookNowModal .modal-content{
