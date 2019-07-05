@@ -46,6 +46,7 @@
 
 }
 
+/*General Styles*/
 /*Typography*/
 /*100,300,400,900*/
 h1, h2, h3, .display-heading {
@@ -81,6 +82,11 @@ header {
     /*background-image: url("../images/Background.bmp");*/
     background-size:cover;
 }
+.btn-primary{
+    background-color: var(--blue-transparent);
+    border-color: var(--blue-transparent);
+}
+
 .site-logo {
     max-height: 260px;
     object-fit: contain;
@@ -288,8 +294,7 @@ header {
     height: 160px;
 }
 #bookNowModal .btn-primary {
-    background-color: var(--blue-transparent);
-    border-color: var(--blue-transparent);
+
     width: 100%;
     margin: 5px;
 }
