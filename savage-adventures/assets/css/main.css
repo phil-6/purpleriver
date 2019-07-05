@@ -86,6 +86,10 @@ header {
     background-color: var(--blue-transparent);
     border-color: var(--blue-transparent);
 }
+.btn-primary:hover{
+    background-color: var(--blue);
+    border-color: var(--blue);
+}
 
 .site-logo {
     max-height: 260px;
@@ -242,6 +246,9 @@ header {
     background: var(--light-gradient-pink);
 }*/
 
+
+
+/*Book Now Modal*/
 #bookNowModal .modal-content{
     min-width: 680px;
     height: 450px;
@@ -294,7 +301,6 @@ header {
     height: 160px;
 }
 #bookNowModal .btn-primary {
-
     width: 100%;
     margin: 5px;
 }
