@@ -306,6 +306,11 @@ header {
 
 
 /*Book Now Modal*/
+#bookNowModal .modal-dialog{
+    min-width: 680px;
+    height: 450px;
+}
+
 #bookNowModal .modal-content{
     min-width: 680px;
     height: 450px;
