@@ -8,7 +8,8 @@
           initial-scale=1,
           maximum-scale=1,
           user-scalable=no">
-    <meta name="description" content="Discover your Primal Side. Join us for unique outdoor adventures, including coasteering, canyoning, climbing and more across South Wales.">
+    <meta name="description"
+          content="Discover your Primal Side. Join us for unique outdoor adventures, including coasteering, canyoning, climbing and more across South Wales.">
     <meta name="author" content="Phil Reynolds">
     <meta name="theme-color" content="#ff3300">
     <link rel="icon" type="image/png" href="assets/favicon/favicon.png" sizes="16x16"/>
@@ -36,12 +37,12 @@
             crossorigin="anonymous"></script>
 
 
-
     <!--  Font Awesome -->
     <script src="https://kit.fontawesome.com/30fa2950fc.js"></script>
 
     <!-- Font Family-->
-    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Raleway:100,300,400,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Raleway:100,300,400,900&display=swap"
+          rel="stylesheet">
 
 
     <!-- StyleSheet -->
@@ -55,7 +56,8 @@
     <div class="row">
         <div class="col">
             <div class="text-center social-links">
-                <a class="social-link social-tripadvisor" href="https://www.tripadvisor.co.uk/Attraction_Review-g186463-d12964875-Reviews-Savage_Adventures-Newport_South_Wales_Wales.html">
+                <a class="social-link social-tripadvisor"
+                   href="https://www.tripadvisor.co.uk/Attraction_Review-g186463-d12964875-Reviews-Savage_Adventures-Newport_South_Wales_Wales.html">
                     <i class="fab fa-2x fa-tripadvisor"></i>
                 </a>
                 <a class="social-link social-facebook" href="https://www.facebook.com/Savage.Adventures">
@@ -118,5 +120,54 @@
         </div>
     </div>
 </header>
+
+
+<!--Contact Us Form-->
+<section class="container-fluid page-intro">
+
+    <p>
+        Any thoughts, suggestions, musings or questions you can either drop us an email, send us a letter or fill out
+        the form below.
+    </p>
+
+</section>
+<section class="container-fluid">
+    <div class="row mx-auto" id="contact-form-row">
+        <div class="col">
+            <form id="contact-us-form"
+                  class="gform"
+                  method="POST"
+                  action="https://script.google.com/macros/s/AKfycbyBt2Fbbux35SztXFp2Wt_DIV0Hm-k9r4nLTu0aU9phlYz0uFg/exec">
+                <!--data-email="bookings@savage-adventures.com"-->
+                <div class="form-elements">
+                    <div class="row">
+                        <div class="col name">
+                            <input type="text" name="name" class="form-control name" placeholder="Name *">
+                        </div>
+                        <div class="col email">
+                            <input type="email" name="email" class="form-control email" placeholder="Email *">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <input type="text" name="subject" class="form-control" placeholder="Subject">
+                    </div>
+                    <div class="row">
+                        <input type="text" name="message" class="form-control message" placeholder="Message">
+                    </div>
+                    <div class="row justify-content-center">
+                        <button type="submit" class="btn btn-primary"><em>Send</em></button>
+                    </div>
+                </div>
+                <div style="display:none" class="thankyou_message">
+                    <!-- You can customize the thankyou message by editing the code below -->
+                    <h2><em>Thanks</em> for contacting us! We will get back to you soon!
+                    </h2>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+<script data-cfasync="false" type="text/javascript" src="assets/js/form-submission-handler.js"></script>
+
 </body>
 </html>

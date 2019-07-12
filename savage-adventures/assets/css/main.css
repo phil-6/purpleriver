@@ -407,3 +407,39 @@ header {
         margin-top: 5px;
     }
 }
+
+/*Contact Us Form*/
+@media (min-width: 576px) {
+    #contact-form-row {
+        max-width: 600px;
+        width: 80%;
+    }
+}
+
+#contact-form-row .col.name {
+    padding-left: 0;
+    padding-right: 5px;
+}
+#contact-form-row .col.email {
+    padding-left: 15px;
+    padding-right: 10px;
+}
+#contact-form-row .form-control.message {
+    height: 160px;
+}
+#contact-form-row form {
+    margin-top: 15px;
+    padding: 15px;
+}
+#contact-form-row .form-control {
+    margin: 5px;
+    background-color: rgba(252, 252, 252, 0.6);
+    border: 2px solid var(--blue);
+}
+#contact-form-row .form-control:focus {
+    background-color: rgba(252, 252, 252, 0.9);
+}
+#contact-form-row .form-control::placeholder {
+    color: var(--blue-dark);
+}
+#contact-form-row
