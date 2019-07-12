@@ -124,8 +124,8 @@
     <p>As safety is our main priority any participants aged 10-17 must be accompanied by a responsible adult over 18.
         Unfortunately, we are currently unable to accept any participants under the age of 10.​ </p>
     <p>Feel free to get in touch with any questions or queries by filling out our"contact us" form or emailing us at
-        Info@savage-adventures.com </p>
-    <p>So put down your pen, step away from your desk and contact us to find out how we can help you discover your
+        <a href="mailto:info@savage-adventures.com">Info@savage-adventures.com</a> </p>
+    <p>So put down your pen, step away from your desk and <a href="#bookNowModalw" class="" data-toggle="modal" data-target="#bookNowModal">get in touch</a> to find out how we can help you discover your
         primal side! </p>
 </section>
 <section class="container-fluid our-team">
@@ -167,6 +167,71 @@
     <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
     <iframe src="//lightwidget.com/widgets/e22468633bc95dd290a0d1dd863a1776.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
 </section>
+
+<!-- Modal -->
+<div class="modal fade" id="bookNowModal" tabindex="-1" role="dialog" aria-labelledby="bookNowModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body background-waterfallslide">
+                <div class="row">
+                    <div class="col align-self-end">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-5 text-center">
+                        <h3 class="modal-heading-white">
+                            Ready for adventure?
+                        </h3>
+
+                        <h1 class="modal-heading-orange text-runjump">
+                            Get in touch and let's make it happen!
+                        </h1>
+                    </div>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-5">
+                        <form id="contact-us-form"
+                              class="gform"
+                              method="POST"
+                              action="https://script.google.com/macros/s/AKfycbyBt2Fbbux35SztXFp2Wt_DIV0Hm-k9r4nLTu0aU9phlYz0uFg/exec">
+                            <!--data-email="bookings@savage-adventures.com"-->
+                            <div class="form-elements">
+                                <div class="row">
+                                    <div class="col name">
+                                        <input type="text" name="name" class="form-control name" placeholder="Name *">
+                                    </div>
+                                    <div class="col email">
+                                        <input type="email" name="email" class="form-control email" placeholder="Email *">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <input type="text" name="subject" class="form-control" placeholder="Subject">
+                                </div>
+                                <div class="row">
+                                    <input type="text" name="message" class="form-control message" placeholder="Message">
+                                </div>
+                                <div class="row justify-content-center">
+                                    <button type="submit" class="btn btn-primary"><em>Send</em></button>
+                                </div>
+                            </div>
+                            <div style="display:none" class="thankyou_message">
+                                <!-- You can customize the thankyou message by editing the code below -->
+                                <h2><em>Thanks</em> for contacting us! We will get back to you soon!
+                                </h2>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script data-cfasync="false" type="text/javascript" src="assets/js/form-submission-handler.js"></script>
+
 
 
 </body>

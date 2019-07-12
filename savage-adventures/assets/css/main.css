@@ -316,9 +316,20 @@ header {
     height: 450px;
 }
 #bookNowModal .modal-body{
-    background-image: url("../images/guide-bex.jpg");
     background-size: cover;
     background-position: center;
+}
+#bookNowModal .modal-body.background-bec{
+    background-image: url("../images/guide-bex.jpg");
+}
+#bookNowModal .modal-body.background-runjump{
+    background-image: url("../images/coasteering-run-jump.jpg");
+}
+#bookNowModal .modal-body.background-jumpnervous{
+    background-image: url("../images/canyoning-jump-nervous.jpg");
+}
+#bookNowModal .modal-body.background-waterfallslide{
+    background-image: url("../images/canyoning-slide.jpg");
 }
 #bookNowModal .close{
     color: var(--white);
@@ -337,6 +348,9 @@ header {
 #bookNowModal .modal-heading-orange {
     color: var(--red-orange);
     margin-top: 150px;
+}
+#bookNowModal .modal-heading-orange.text-runjump {
+    font-size: 1.5rem;
 }
 #bookNowModal form {
     margin-top: 15px;
@@ -376,8 +390,12 @@ header {
 }
 
 @media (max-width: 576px){
-    #bookNowModal .modal-content{
+    #bookNowModal .modal-dialog {
+        margin: 0;
+    }
+    #bookNowModal .modal-content {
         min-width: auto;
+        max-width: 100vw;
     }
     #bookNowModal .modal-heading-white {
         margin-top: 10px;
