@@ -215,7 +215,7 @@ header {
     object-fit: cover;
 }
 
-.page-intro{
+.page-intro, .page-info{
     max-width: 900px;
     text-align: justify;
     font-weight: 100;
