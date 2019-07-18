@@ -442,4 +442,8 @@ header {
 #contact-form-row .form-control::placeholder {
     color: var(--blue-dark);
 }
-#contact-form-row
+.full-width img{
+    width:100vw;
+    position: absolute;
+    left: 0;
+}
