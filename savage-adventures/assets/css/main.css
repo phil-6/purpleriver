@@ -241,7 +241,7 @@ header {
     background: var(--savage-bg-to-top);
 }
 @media (max-width: 576px){
-    .our-team {
+    .our-team .page-content{
         padding: 0;
     }
     .our-team .card{
