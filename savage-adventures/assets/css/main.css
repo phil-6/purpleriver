@@ -18,7 +18,7 @@
     --yellow: #f0ac00;
     --yellow-dark: #d08d00;
     --yellow-gradient: linear-gradient(to bottom, #f0ac00, #d08d00);
-    --yellow-gradient2: linear-gradient(190deg, #f7ff00, #db36a4);
+    --yellow-gradient2: linear-gradient(10deg, #f0ac00, #db36a4); /*f7ff00*/
 
     --red: #970000;
     --red-dark: #680000;
@@ -31,6 +31,10 @@
     --pink-dark: #b91d73;
     --pink-gradient: linear-gradient(to bottom, #f953c6, #b91d73);
     --pink-gradient2: radial-gradient( #ff6a00, #ee0979);
+
+    --blue-pink-gradient: linear-gradient(to bottom, #00c8ff, #f953c6);
+    --blue-green-gradient: linear-gradient(to top, #00c8ff, #18b600);
+
 
     --savage-bg-fallback: #00c8ff;
     --savage-bg: linear-gradient(135deg, #ff3300 0%, #ff5100 5%, #e97a15 20%, #76a088 40%, #00c8ff 100%);
@@ -178,16 +182,16 @@ header {
     }
 }
 .quick-links .card.about-us  {
-    background: var(--yellow-gradient2);
+    background: var(--blue-pink-gradient);
 }
 .quick-links .card.corporate  {
     background: var(--blue-gradient2);
 }
 .quick-links .card.stag-hen  {
-    background: var(--pink-gradient2);
+    background: var(--yellow-gradient2);
 }
 .quick-links .card.training  {
-    background: var(--green-gradient2);
+    background: var(--blue-green-gradient);
 }
 .quick-links .card.contact-us  {
     background: var(--red-gradient2);
@@ -222,8 +226,10 @@ header {
     font-size: 1.3rem;
     color: white;
 }
-
 .our-team {
+    background: var(--blue-pink-gradient) fixed;
+}
+.our-team .page-content{
     margin-top: 10px;
     margin-bottom: 20px;
 }
@@ -267,6 +273,20 @@ header {
 .our-team .card.beckii {
     background: var(--light-gradient-pink);
 }*/
+
+.stag-hen {
+    background: var(--yellow-gradient2) fixed;
+}
+.training {
+    background: var(--blue-green-gradient) fixed;
+}
+.corporate {
+    background: var(--blue-gradient2) fixed;
+}
+.contact-us {
+    background: var(--red-gradient2) fixed;
+}
+
 
 .book-now-button, .find-out-more-button {
     color: var(--white);
