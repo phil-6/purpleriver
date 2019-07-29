@@ -194,5 +194,11 @@
         document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
     }
 </script>
+<script>
+    $(window).scroll(function() {
+        var scrolledY = $(window).scrollTop();
+        $('.sec1').css('background-position', 'center ' + ((scrolledY)) + 'px');
+    });
+</script>
 </body>
 </html>
