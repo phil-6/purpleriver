@@ -45,10 +45,10 @@ body:after {
     /*background-repeat: no-repeat;*/
     /*background-size: cover;*/
     /*background-position: center center;*/
-    -moz-transition: opacity 2s ease;
-    -webkit-transition: opacity 2s ease;
-    -ms-transition: opacity 2s ease;
-    transition: opacity 2s ease;
+    -moz-transition: opacity 26s ease;
+    -webkit-transition: opacity 26s ease;
+    -ms-transition: opacity 26s ease;
+    transition: opacity 26s ease;
 }
 body.is-preload:after {
     opacity: 1;
