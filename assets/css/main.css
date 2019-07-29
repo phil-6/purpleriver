@@ -27,11 +27,14 @@ body {
     background: -ms-linear-gradient(160deg, #00c8ff 10%, #f953c6);
     background: linear-gradient(160deg, #00c8ff 10%, #f953c6);
     /*background-repeat: no-repeat;*/
-    /*background-size: cover;*/
-    /*background-position: center center;*/
-    /*background-attachment: fixed;*/
-    will-change: transform;
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    background-size: 100%;
     background-attachment: fixed;
+
 }
 body:after {
     content: '';
