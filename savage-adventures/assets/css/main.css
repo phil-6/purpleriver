@@ -227,7 +227,9 @@ header {
     color: white;
 }
 .our-team {
-    background: var(--blue-pink-gradient) fixed;
+    height: 100%;
+    background: var(--blue-pink-gradient) center center fixed;
+    background-size: cover;
 }
 .our-team .page-content{
     margin-top: 10px;
