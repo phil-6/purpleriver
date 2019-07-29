@@ -88,7 +88,7 @@ body.is-preload:after {
 }
 @media (min-width: 768px) {
     .masthead {
-        padding: 6rem 0;
+        padding: 3rem 0;
     }
     .masthead h1 {
         font-size: 4rem;
@@ -238,7 +238,7 @@ body.is-preload .card {
     margin-bottom: 8px;
 }
 .social {
-    margin-top: 5rem;
+    margin-top: 3rem;
     -moz-transition: opacity 3s ease, -moz-transform 6s ease;
     -webkit-transition: opacity 3s ease, -webkit-transform 6s ease;
     -ms-transition: opacity 3s ease, -ms-transform 6s ease;
