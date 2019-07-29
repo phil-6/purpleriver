@@ -27,9 +27,9 @@ body {
     background: -ms-linear-gradient(to bottom, #00c8ff 10%, #f953c6);
     background: linear-gradient(to bottom, #00c8ff 10%, #f953c6);
     /*background-repeat: no-repeat;*/
-    background-size: cover;
+    /*background-size: cover;*/
     /*background-position: center center;*/
-    background-attachment: fixed;
+    /*background-attachment: fixed;*/
 }
 body:after {
     content: '';
