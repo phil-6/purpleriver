@@ -22,10 +22,10 @@ body {
     width: 100%;
     height: 100%;
     background-color: #EEF6EE;
-    background-image: -moz-linear-gradient(120deg, #85C1E9 20%, #A569BD 100%);
-    background-image: -webkit-linear-gradient(120deg, #85C1E9 20%, #A569BD 100%);
-    background-image: -ms-linear-gradient(120deg, #85C1E9 20%, #A569BD 100%);
-    background-image: linear-gradient(120deg, #85C1E9 20%, #A569BD 100%);
+    background-image: -moz-linear-gradient(180deg, #00c8ff 10%, #f953c6 100%);
+    background-image: -webkit-linear-gradient(180deg, #00c8ff 10%, #f953c6 100%);
+    background-image: -ms-linear-gradient(180deg, #00c8ff 10%, #f953c6 100%);
+    background-image: linear-gradient(180deg, #00c8ff 10%, #f953c6 100%);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
