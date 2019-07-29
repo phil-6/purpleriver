@@ -22,10 +22,10 @@ body {
     width: 100%;
     height: 100%;
     background-color: #EEF6EE;
-    background: -moz-linear-gradient(to bottom, #00c8ff, #f953c6);
-    background: -webkit-linear-gradient(to bottom, #00c8ff, #f953c6);
-    background: -ms-linear-gradient(to bottom, #00c8ff, #f953c6);
-    background: linear-gradient(to bottom, #00c8ff, #f953c6);
+    background: -moz-linear-gradient(to top, #00c8ff, #f953c6);
+    background: -webkit-linear-gradient(to top, #00c8ff, #f953c6);
+    background: -ms-linear-gradient(to top, #00c8ff, #f953c6);
+    background: linear-gradient(to top, #00c8ff, #f953c6);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
