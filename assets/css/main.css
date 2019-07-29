@@ -23,7 +23,7 @@ body {
     height: 100%;
     background-color: #EEF6EE;
     background: -moz-linear-gradient( #00c8ff 10%, #f953c6);
-    background: -webkit-linear-gradient( #00c8ff 10%, #f953c6);
+    /*background: -webkit-linear-gradient( #00c8ff 10%, #f953c6);*/
     background: -ms-linear-gradient( #00c8ff 10%, #f953c6);
     background: linear-gradient( #00c8ff 10%, #f953c6);
     background-repeat: no-repeat;
