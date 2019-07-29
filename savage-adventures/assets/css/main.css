@@ -227,7 +227,7 @@ header {
     color: white;
 }
 .our-team {
-    background: var(--blue-pink-gradient) fixed;
+    background: var(--blue-pink-gradient);
 }
 .our-team .page-content{
     margin-top: 10px;
