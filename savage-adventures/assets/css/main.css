@@ -32,8 +32,8 @@
     --pink-gradient: linear-gradient(to bottom, #f953c6, #b91d73);
     --pink-gradient2: radial-gradient( #ff6a00, #ee0979);
 
-    --blue-pink-gradient: linear-gradient(to bottom, #00c8ff, #f953c6);
-    --blue-green-gradient: linear-gradient(to top, #00c8ff, #18b600);
+    --blue-pink-gradient: linear-gradient(to top, #f953c6, #00c8ff);
+    --blue-green-gradient: linear-gradient(to bottom, #18b600, #00c8ff);
 
 
     --savage-bg-fallback: #00c8ff;
@@ -227,7 +227,7 @@ header {
     color: white;
 }
 .our-team {
-    background: var(--blue-pink-gradient);
+    background: var(--blue-pink-gradient) fixed;
 }
 .our-team .page-content{
     margin-top: 10px;
