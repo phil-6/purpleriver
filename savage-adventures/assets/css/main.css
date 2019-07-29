@@ -228,8 +228,9 @@ header {
 }
 .our-team {
     height: 100%;
-    background: var(--blue-pink-gradient) center center fixed;
+    background: var(--blue-pink-gradient);
     background-size: cover;
+    -webkit-background-size: cover;
 }
 .our-team .page-content{
     margin-top: 10px;
