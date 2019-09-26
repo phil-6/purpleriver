@@ -39,6 +39,20 @@
         "nov": 60,
         "dec": 60
       },
+      "booked_calls": {
+        "jan": 5,
+        "feb": 4,
+        "mar": 3,
+        "apr": 6,
+        "may": 6,
+        "jun": 3,
+        "jul": 2,
+        "aug": 6,
+        "sep": 4,
+        "oct": 6,
+        "nov": 4,
+        "dec": 8
+      },
       "total_calls": {
         "jan": 120,
         "feb": 100,
@@ -53,6 +67,7 @@
         "nov": 80,
         "dec": 100
       }
+
     }
   },
   "calls_by_type": {

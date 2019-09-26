@@ -362,6 +362,9 @@ function buildCharts() {
     var notMatchedGradient_lc0 = ctx_lc0.createLinearGradient(150.000, 0.000, 150.000, 300.000);
     notMatchedGradient_lc0.addColorStop(0.000, chartColors.red);
     notMatchedGradient_lc0.addColorStop(1.000, chartColors.red_orange);
+    var bookedGradient_lc0 = ctx_lc0.createLinearGradient(150.000, 150.000, 600.000, 300.000);
+    bookedGradient_lc0.addColorStop(0.000, chartColors.purple_blue);
+    bookedGradient_lc0.addColorStop(1.000, chartColors.green);
     var lineChartAnnualCalls = new Chart(ctx_lc0, {
         type: 'line',
         data: {
@@ -397,6 +400,25 @@ function buildCharts() {
                     json_data.global_calls.calls_by_month.call_match.oct,
                     json_data.global_calls.calls_by_month.call_match.nov,
                     json_data.global_calls.calls_by_month.call_match.dec
+                ]
+            }, {
+                label: 'Bookings',
+                fill: '-1',
+                backgroundColor: bookedGradient_lc0,
+                borderColor: chartColors.green,
+                data: [
+                    json_data.global_calls.calls_by_month.booked_calls.jan,
+                    json_data.global_calls.calls_by_month.booked_calls.feb,
+                    json_data.global_calls.calls_by_month.booked_calls.mar,
+                    json_data.global_calls.calls_by_month.booked_calls.apr,
+                    json_data.global_calls.calls_by_month.booked_calls.may,
+                    json_data.global_calls.calls_by_month.booked_calls.jun,
+                    json_data.global_calls.calls_by_month.booked_calls.jul,
+                    json_data.global_calls.calls_by_month.booked_calls.aug,
+                    json_data.global_calls.calls_by_month.booked_calls.sep,
+                    json_data.global_calls.calls_by_month.booked_calls.oct,
+                    json_data.global_calls.calls_by_month.booked_calls.nov,
+                    json_data.global_calls.calls_by_month.booked_calls.dec
                 ]
             }, {
                 label: 'Not Matched Calls',
