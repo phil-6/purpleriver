@@ -29,8 +29,8 @@ var chartColors = {
     purple: '#8176b5e6',
     purple_blue: '#76c4e2e6',
     green: '#92fe9de6',
-    green_blue: '#00c9ffe6',
-    green_blue_solid: '#00c9ff',
+    blue: '#00c9ffe6',
+    blue_solid: '#00c9ff',
     red: '#fc6076e6',
     red_orange: '#ff9a44e6',
     red_orange_solid: '#ff9a44',
@@ -356,15 +356,15 @@ function buildCharts() {
     Create Line Chart showing annual calls
     */
     var ctx_lc0 = document.getElementById('lineChartAnnualCalls').getContext('2d');
-    var matchedCallsGradient_lc0 = ctx_lc0.createLinearGradient(0.000, 50.000, 300.000, 250.000);
-    matchedCallsGradient_lc0.addColorStop(0.000, chartColors.green);
-    matchedCallsGradient_lc0.addColorStop(1.000, chartColors.green_blue);
+    var matchedCallsGradient_lc0 = ctx_lc0.createLinearGradient(50.000, 300.000, 100.000, 50.000);
+    matchedCallsGradient_lc0.addColorStop(0.000, chartColors.purple_blue);
+    matchedCallsGradient_lc0.addColorStop(1.000, chartColors.purple_blue);
     var notMatchedGradient_lc0 = ctx_lc0.createLinearGradient(150.000, 0.000, 150.000, 300.000);
     notMatchedGradient_lc0.addColorStop(0.000, chartColors.red);
     notMatchedGradient_lc0.addColorStop(1.000, chartColors.red_orange);
-    var bookedGradient_lc0 = ctx_lc0.createLinearGradient(150.000, 150.000, 600.000, 300.000);
-    bookedGradient_lc0.addColorStop(0.000, chartColors.purple_blue);
-    bookedGradient_lc0.addColorStop(1.000, chartColors.green);
+    var bookedGradient_lc0 = ctx_lc0.createLinearGradient(100.000, 100.000, 0.000, 0.000);
+    bookedGradient_lc0.addColorStop(0.000, chartColors.green);
+    bookedGradient_lc0.addColorStop(1.000, chartColors.blue);
     var lineChartAnnualCalls = new Chart(ctx_lc0, {
         type: 'line',
         data: {
@@ -382,28 +382,9 @@ function buildCharts() {
                 'Nov',
                 'Dec'
             ],
-            datasets: [{
-                label: 'Matched Calls',
-                fill: 'start',
-                backgroundColor: matchedCallsGradient_lc0,
-                borderColor: chartColors.green_blue_solid,
-                data: [
-                    json_data.global_calls.calls_by_month.call_match.jan,
-                    json_data.global_calls.calls_by_month.call_match.feb,
-                    json_data.global_calls.calls_by_month.call_match.mar,
-                    json_data.global_calls.calls_by_month.call_match.apr,
-                    json_data.global_calls.calls_by_month.call_match.may,
-                    json_data.global_calls.calls_by_month.call_match.jun,
-                    json_data.global_calls.calls_by_month.call_match.jul,
-                    json_data.global_calls.calls_by_month.call_match.aug,
-                    json_data.global_calls.calls_by_month.call_match.sep,
-                    json_data.global_calls.calls_by_month.call_match.oct,
-                    json_data.global_calls.calls_by_month.call_match.nov,
-                    json_data.global_calls.calls_by_month.call_match.dec
-                ]
-            }, {
+            datasets: [ {
                 label: 'Bookings',
-                fill: '-1',
+                fill: 'none',
                 backgroundColor: bookedGradient_lc0,
                 borderColor: chartColors.green,
                 data: [
@@ -420,9 +401,28 @@ function buildCharts() {
                     json_data.global_calls.calls_by_month.booked_calls.nov,
                     json_data.global_calls.calls_by_month.booked_calls.dec
                 ]
+            },{
+                label: 'Matched Calls',
+                fill: 'none',
+                backgroundColor: matchedCallsGradient_lc0,
+                borderColor: chartColors.blue_solid,
+                data: [
+                    json_data.global_calls.calls_by_month.call_match.jan,
+                    json_data.global_calls.calls_by_month.call_match.feb,
+                    json_data.global_calls.calls_by_month.call_match.mar,
+                    json_data.global_calls.calls_by_month.call_match.apr,
+                    json_data.global_calls.calls_by_month.call_match.may,
+                    json_data.global_calls.calls_by_month.call_match.jun,
+                    json_data.global_calls.calls_by_month.call_match.jul,
+                    json_data.global_calls.calls_by_month.call_match.aug,
+                    json_data.global_calls.calls_by_month.call_match.sep,
+                    json_data.global_calls.calls_by_month.call_match.oct,
+                    json_data.global_calls.calls_by_month.call_match.nov,
+                    json_data.global_calls.calls_by_month.call_match.dec
+                ]
             }, {
                 label: 'Not Matched Calls',
-                fill: '-1',
+                fill: 'none',
                 backgroundColor: notMatchedGradient_lc0,
                 borderColor: chartColors.red_orange_solid,
                 data: [
@@ -438,6 +438,25 @@ function buildCharts() {
                     json_data.global_calls.calls_by_month.call_no_match.oct,
                     json_data.global_calls.calls_by_month.call_no_match.nov,
                     json_data.global_calls.calls_by_month.call_no_match.dec
+                ]
+            }, {
+                label: 'Total Calls',
+                fill: 'none',
+                backgroundColor: chartColors.purple,
+                borderColor: chartColors.purple,
+                data: [
+                    json_data.global_calls.calls_by_month.total_calls.jan,
+                    json_data.global_calls.calls_by_month.total_calls.feb,
+                    json_data.global_calls.calls_by_month.total_calls.mar,
+                    json_data.global_calls.calls_by_month.total_calls.apr,
+                    json_data.global_calls.calls_by_month.total_calls.may,
+                    json_data.global_calls.calls_by_month.total_calls.jun,
+                    json_data.global_calls.calls_by_month.total_calls.jul,
+                    json_data.global_calls.calls_by_month.total_calls.aug,
+                    json_data.global_calls.calls_by_month.total_calls.sep,
+                    json_data.global_calls.calls_by_month.total_calls.oct,
+                    json_data.global_calls.calls_by_month.total_calls.nov,
+                    json_data.global_calls.calls_by_month.total_calls.dec
                 ]
             }]
         },
@@ -465,7 +484,6 @@ function buildCharts() {
             scales: {
                 xAxes: [{
                     display: true,
-                    stacked: true,
                     scaleLabel: {
                         display: true,
                         labelString: 'Month',
@@ -480,7 +498,7 @@ function buildCharts() {
                 }],
                 yAxes: [{
                     display: true,
-                    stacked: true,
+                    stacked: false,
                     scaleLabel: {
                         display: true,
                         labelString: 'Value',
@@ -506,7 +524,7 @@ function buildCharts() {
     var ctx_dc0 = document.getElementById('callMatches_Doughnut').getContext('2d');
     var callMatchesGradient_dc0 = ctx_dc0.createLinearGradient(0.000, 50.000, 300.000, 250.000);
     callMatchesGradient_dc0.addColorStop(0.000, chartColors.green);
-    callMatchesGradient_dc0.addColorStop(1.000, chartColors.green_blue);
+    callMatchesGradient_dc0.addColorStop(1.000, chartColors.blue);
     var notMatchedGradient_dc0 = ctx_dc0.createLinearGradient(150.000, 0.000, 150.000, 300.000);
     notMatchedGradient_dc0.addColorStop(0.000, chartColors.red);
     notMatchedGradient_dc0.addColorStop(1.000, chartColors.red_orange);
@@ -564,7 +582,7 @@ function buildCharts() {
     var ctx_dc1 = document.getElementById('callBookings_Doughnut').getContext('2d');
     var bookingsGradient_dc1 = ctx_dc1.createLinearGradient(0.000, 50.000, 300.000, 250.000);
     bookingsGradient_dc1.addColorStop(0.000, chartColors.green);
-    bookingsGradient_dc1.addColorStop(1.000, chartColors.green_blue);
+    bookingsGradient_dc1.addColorStop(1.000, chartColors.blue);
     var notBookedGradient_dc1 = ctx_dc1.createLinearGradient(150.000, 0.000, 150.000, 300.000);
     notBookedGradient_dc1.addColorStop(0.000, chartColors.purple_blue);
     notBookedGradient_dc1.addColorStop(1.000, chartColors.purple);
