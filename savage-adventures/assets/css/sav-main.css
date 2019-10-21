@@ -369,6 +369,9 @@ header {
 #bookNowModal .modal-body.background-waterfallslide{
     background-image: url("../images/canyoning-slide.jpg");
 }
+#bookNowModal .modal-body.background-philcoasteeringjump{
+    background-image: url("../images/guide-phil-coasteering-jump.jpg");
+}
 #bookNowModal .close{
     color: var(--white);
     font-size: 24px;
@@ -378,14 +381,18 @@ header {
 #bookNowModal .close:hover{
     opacity: 0.6;
 }
-#bookNowModal .modal-heading-white {
-    color: var(--white);
+#bookNowModal .modal-heading-top {
     margin-top: 15px;
     letter-spacing: 0.2rem;
 }
+#bookNowModal .modal-heading-bottom {
+    margin-top: 150px;
+}
+#bookNowModal .modal-heading-white {
+    color: var(--white);
+}
 #bookNowModal .modal-heading-orange {
     color: var(--red-orange);
-    margin-top: 150px;
 }
 #bookNowModal .modal-heading-orange.text-runjump {
     font-size: 1.5rem;
