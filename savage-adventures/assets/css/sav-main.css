@@ -323,6 +323,24 @@ header {
     }
 }
 
+.info-section{
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.info-section h2, .info-section h4{
+    text-align: center;
+}
+@media (min-width: 768px){
+    .info-section {
+        margin: 0;
+        text-align: left;
+    }
+}
+@media (min-width: 992px){
+    .page-content {
+        max-width: 80%;
+    }
+}
 
 
 /*Book Now Modal*/
