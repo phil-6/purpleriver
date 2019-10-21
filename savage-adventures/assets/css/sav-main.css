@@ -337,7 +337,7 @@ header {
     }
 }
 @media (min-width: 992px){
-    .page-content {
+    .adventures-detail {
         max-width: 80%;
     }
 }
