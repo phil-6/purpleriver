@@ -15,7 +15,7 @@
     <link rel="icon" type="image/png" href="../assets/favicon/favicon.png" sizes="32x32"/>
     <link rel="icon" type="image/png" href="../assets/favicon/favicon.png" sizes="96x96"/>
 
-    <title>Savage Adventures | Bushcraft Adventures</title>
+    <title>Savage Adventures | Training and Courses</title>
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -35,18 +35,22 @@
             integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
             crossorigin="anonymous"></script>
 
+
+
     <!--  Font Awesome -->
     <script src="https://kit.fontawesome.com/30fa2950fc.js"></script>
 
     <!-- Font Family-->
     <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Raleway:100,300,400,900&display=swap" rel="stylesheet">
 
+
     <!-- StyleSheet -->
     <link rel="stylesheet"
           type="text/css"
           href="../assets/css/sav-main.css"/>
 </head>
-<body>
+
+<body class="training">
 <header class="container-fluid">
     <div class="row">
         <div class="col">
@@ -89,26 +93,26 @@
     <div class="row">
         <div class="col">
             <h1 class="text-center display-heading">
-                Bushcraft
+                Learn something new or recertify
             </h1>
             <ul class="nav justify-content-center">
                 <li class="nav-item">
-                    <a class="nav-link" href="../about-us/about-us.html">About Us</a>
+                    <a class="nav-link" href="../about-us">About Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../adventures.html">Adventures</a>
+                    <a class="nav-link" href="../adventures">Adventures</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../corporate.html">Corporate Events</a>
+                    <a class="nav-link" href="../corporate">Corporate Events</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../stag-hen.html">Stag & Hen</a>
+                    <a class="nav-link" href="../stag-hen">Stag & Hen</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../training.html">Training Courses</a>
+                    <a class="nav-link" href="../training">Training Courses</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../contact-us.html">Contact Us</a>
+                    <a class="nav-link" href="../contact-us">Contact Us</a>
                 </li>
             </ul>
         </div>
@@ -118,39 +122,24 @@
     <div class="row text-center">
         <div class="col">
             <button type="button" class="book-now-button btn btn-primary" data-toggle="modal" data-target="#bookNowModal">
-                Book Your Adventure Now!
+                Book Your Course Now!
             </button>
         </div>
     </div>
     <div class="row">
         <div class="col text-center">
-            <p>We offer a range of activities at Savage Adventures, whether you're a seasoned adventurer or wanting to get outside that little bit more, there is something for you. </p>
-            <p>Read on to find out more, or if you have any questions just get in touch.</p>
+            <p>We offer a range of training at Savage Adventures, from first aid, to technical skills to water safety.</p>
+            <h3>More info coming very soon, or if you have any questions just <a href="#bookNowModal" class=""
+                                                                                 data-toggle="modal"
+                                                                                 data-target="#bookNowModal">get in touch.</a></h3>
         </div>
     </div>
     <div class="row full-width">
         <img src="../assets/images/canyoning-flip.jpg">
     </div>
 </section>
-<section class="container-fluid adventures-detail">
-    <div class="row">
-        <h2>What Is Canyoning?</h2>
-    </div>
-    <div class="row">
-        <h2>What's Included</h2>
-    </div>
-    <div class="row">
-        <h2>What's not Included</h2>
-    </div>
-    <div class="row">
-        <h2>Location</h2>
-        <p>Location and timings will be arranged during booking due to the flexibility of activities.</p>
-    </div>
-    <div class="row">
-        <h2>Price: £45</h2>
-    </div>
+<section class="container-fluid page-content">
 </section>
-
 <!-- Modal -->
 <div class="modal fade" id="bookNowModal" tabindex="-1" role="dialog" aria-labelledby="bookNowModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -165,16 +154,16 @@
                 </div>
                 <div class="row">
                     <div class="col-md-5 text-center">
-                        <h3 class="modal-heading-white">
-                            Ready to take the plunge?
+                        <h3 class="modal-heading-white modal-heading-top">
+                            Looking for more info?
                         </h3>
 
-                        <h1 class="modal-heading-orange">
-                            Contact us to book
+                        <h1 class="modal-heading-orange bottom">
+                            Let us know what you need and we'll make it happen.
                         </h1>
                     </div>
-                    <div class="col-md-2"></div>
-                    <div class="col-md-5">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-6">
                         <form id="contact-us-form"
                               class="gform"
                               method="POST"
@@ -213,5 +202,6 @@
         </div>
     </div>
 </div>
-<script data-cfasync="false" type="text/javascript" src="assets/js/form-submission-handler.js"></script>
+<script data-cfasync="false" type="text/javascript" src="../assets/js/form-submission-handler.js"></script>
 </body>
+</html>
