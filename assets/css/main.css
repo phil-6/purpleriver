@@ -240,6 +240,11 @@ body.is-preload .card {
     -ms-transition: opacity 3s ease, -ms-transform 6s ease;
     transition: opacity 3s ease, transform 6s ease;
 }
+
+.disabled {
+    pointer-events: none;
+    opacity: .65
+}
 body.is-preload .social{
     opacity: 0;
 }
