@@ -176,6 +176,7 @@ function buildExtraInfoCards () {
 /*
 Build All Charts
  */
+
 function buildCharts() {
     getData();
     processData();
@@ -355,6 +356,37 @@ function buildCharts() {
     /*
     Create Line Chart showing annual calls
     */
+    var month = [];
+    month[0] = "jan";
+    month[1] = "feb";
+    month[2] = "mar";
+    month[3] = "apr";
+    month[4] = "may";
+    month[5] = "jun";
+    month[6] = "jul";
+    month[7] = "aug";
+    month[8] = "sep";
+    month[9] = "oct";
+    month[10] = "nov";
+    month[11] = "dec";
+    month[12] = "jan";
+    month[13] = "feb";
+    month[14] = "mar";
+    month[15] = "apr";
+    month[16] = "may";
+    month[17] = "jun";
+    month[18] = "jul";
+    month[19] = "aug";
+    month[20] = "sep";
+    month[21] = "oct";
+    month[22] = "nov";
+    month[23] = "dec";
+    var date = new Date();
+    var currentMonthDigit = date.getMonth();
+    function capitalizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+
     var ctx_lc0 = document.getElementById('lineChartAnnualCalls').getContext('2d');
     var matchedCallsGradient_lc0 = ctx_lc0.createLinearGradient(50.000, 300.000, 100.000, 50.000);
     matchedCallsGradient_lc0.addColorStop(0.000, chartColors.purple_blue);
@@ -369,18 +401,18 @@ function buildCharts() {
         type: 'line',
         data: {
             labels: [
-                'Jan',
-                'Feb',
-                'Mar',
-                'Apr',
-                'May',
-                'Jun',
-                'Jul',
-                'Aug',
-                'Sep',
-                'Oct',
-                'Nov',
-                'Dec'
+                capitalizeFirstLetter(month[currentMonthDigit + 1]),
+                capitalizeFirstLetter(month[currentMonthDigit + 2]),
+                capitalizeFirstLetter(month[currentMonthDigit + 3]),
+                capitalizeFirstLetter(month[currentMonthDigit + 4]),
+                capitalizeFirstLetter(month[currentMonthDigit + 5]),
+                capitalizeFirstLetter(month[currentMonthDigit + 6]),
+                capitalizeFirstLetter(month[currentMonthDigit + 7]),
+                capitalizeFirstLetter(month[currentMonthDigit + 8]),
+                capitalizeFirstLetter(month[currentMonthDigit + 9]),
+                capitalizeFirstLetter(month[currentMonthDigit + 10]),
+                capitalizeFirstLetter(month[currentMonthDigit + 11]),
+                capitalizeFirstLetter(month[currentMonthDigit + 0])
             ],
             datasets: [ {
                 label: 'Bookings',
@@ -388,18 +420,18 @@ function buildCharts() {
                 backgroundColor: bookedGradient_lc0,
                 borderColor: chartColors.green,
                 data: [
-                    json_data.global_calls.calls_by_month.booked_calls.jan,
-                    json_data.global_calls.calls_by_month.booked_calls.feb,
-                    json_data.global_calls.calls_by_month.booked_calls.mar,
-                    json_data.global_calls.calls_by_month.booked_calls.apr,
-                    json_data.global_calls.calls_by_month.booked_calls.may,
-                    json_data.global_calls.calls_by_month.booked_calls.jun,
-                    json_data.global_calls.calls_by_month.booked_calls.jul,
-                    json_data.global_calls.calls_by_month.booked_calls.aug,
-                    json_data.global_calls.calls_by_month.booked_calls.sep,
-                    json_data.global_calls.calls_by_month.booked_calls.oct,
-                    json_data.global_calls.calls_by_month.booked_calls.nov,
-                    json_data.global_calls.calls_by_month.booked_calls.dec
+                    eval("json_data.global_calls.calls_by_month.booked_calls."+month[currentMonthDigit + 1]),
+                    eval("json_data.global_calls.calls_by_month.booked_calls."+month[currentMonthDigit + 2]),
+                    eval("json_data.global_calls.calls_by_month.booked_calls."+month[currentMonthDigit + 3]),
+                    eval("json_data.global_calls.calls_by_month.booked_calls."+month[currentMonthDigit + 4]),
+                    eval("json_data.global_calls.calls_by_month.booked_calls."+month[currentMonthDigit + 5]),
+                    eval("json_data.global_calls.calls_by_month.booked_calls."+month[currentMonthDigit + 6]),
+                    eval("json_data.global_calls.calls_by_month.booked_calls."+month[currentMonthDigit + 7]),
+                    eval("json_data.global_calls.calls_by_month.booked_calls."+month[currentMonthDigit + 8]),
+                    eval("json_data.global_calls.calls_by_month.booked_calls."+month[currentMonthDigit + 9]),
+                    eval("json_data.global_calls.calls_by_month.booked_calls."+month[currentMonthDigit + 10]),
+                    eval("json_data.global_calls.calls_by_month.booked_calls."+month[currentMonthDigit + 11]),
+                    eval("json_data.global_calls.calls_by_month.booked_calls."+month[currentMonthDigit + 0])
                 ]
             },{
                 label: 'Matched Calls',
@@ -407,18 +439,18 @@ function buildCharts() {
                 backgroundColor: matchedCallsGradient_lc0,
                 borderColor: chartColors.blue_solid,
                 data: [
-                    json_data.global_calls.calls_by_month.call_match.jan,
-                    json_data.global_calls.calls_by_month.call_match.feb,
-                    json_data.global_calls.calls_by_month.call_match.mar,
-                    json_data.global_calls.calls_by_month.call_match.apr,
-                    json_data.global_calls.calls_by_month.call_match.may,
-                    json_data.global_calls.calls_by_month.call_match.jun,
-                    json_data.global_calls.calls_by_month.call_match.jul,
-                    json_data.global_calls.calls_by_month.call_match.aug,
-                    json_data.global_calls.calls_by_month.call_match.sep,
-                    json_data.global_calls.calls_by_month.call_match.oct,
-                    json_data.global_calls.calls_by_month.call_match.nov,
-                    json_data.global_calls.calls_by_month.call_match.dec
+                    eval("json_data.global_calls.calls_by_month.call_match."+month[currentMonthDigit + 1]),
+                    eval("json_data.global_calls.calls_by_month.call_match."+month[currentMonthDigit + 2]),
+                    eval("json_data.global_calls.calls_by_month.call_match."+month[currentMonthDigit + 3]),
+                    eval("json_data.global_calls.calls_by_month.call_match."+month[currentMonthDigit + 4]),
+                    eval("json_data.global_calls.calls_by_month.call_match."+month[currentMonthDigit + 5]),
+                    eval("json_data.global_calls.calls_by_month.call_match."+month[currentMonthDigit + 6]),
+                    eval("json_data.global_calls.calls_by_month.call_match."+month[currentMonthDigit + 7]),
+                    eval("json_data.global_calls.calls_by_month.call_match."+month[currentMonthDigit + 8]),
+                    eval("json_data.global_calls.calls_by_month.call_match."+month[currentMonthDigit + 9]),
+                    eval("json_data.global_calls.calls_by_month.call_match."+month[currentMonthDigit + 10]),
+                    eval("json_data.global_calls.calls_by_month.call_match."+month[currentMonthDigit + 11]),
+                    eval("json_data.global_calls.calls_by_month.call_match."+month[currentMonthDigit + 0])
                 ]
             }, {
                 label: 'Not Matched Calls',
@@ -426,18 +458,18 @@ function buildCharts() {
                 backgroundColor: notMatchedGradient_lc0,
                 borderColor: chartColors.red_orange_solid,
                 data: [
-                    json_data.global_calls.calls_by_month.call_no_match.jan,
-                    json_data.global_calls.calls_by_month.call_no_match.feb,
-                    json_data.global_calls.calls_by_month.call_no_match.mar,
-                    json_data.global_calls.calls_by_month.call_no_match.apr,
-                    json_data.global_calls.calls_by_month.call_no_match.may,
-                    json_data.global_calls.calls_by_month.call_no_match.jun,
-                    json_data.global_calls.calls_by_month.call_no_match.jul,
-                    json_data.global_calls.calls_by_month.call_no_match.aug,
-                    json_data.global_calls.calls_by_month.call_no_match.sep,
-                    json_data.global_calls.calls_by_month.call_no_match.oct,
-                    json_data.global_calls.calls_by_month.call_no_match.nov,
-                    json_data.global_calls.calls_by_month.call_no_match.dec
+                    eval("json_data.global_calls.calls_by_month.call_no_match."+month[currentMonthDigit + 1]),
+                    eval("json_data.global_calls.calls_by_month.call_no_match."+month[currentMonthDigit + 2]),
+                    eval("json_data.global_calls.calls_by_month.call_no_match."+month[currentMonthDigit + 3]),
+                    eval("json_data.global_calls.calls_by_month.call_no_match."+month[currentMonthDigit + 4]),
+                    eval("json_data.global_calls.calls_by_month.call_no_match."+month[currentMonthDigit + 5]),
+                    eval("json_data.global_calls.calls_by_month.call_no_match."+month[currentMonthDigit + 6]),
+                    eval("json_data.global_calls.calls_by_month.call_no_match."+month[currentMonthDigit + 7]),
+                    eval("json_data.global_calls.calls_by_month.call_no_match."+month[currentMonthDigit + 8]),
+                    eval("json_data.global_calls.calls_by_month.call_no_match."+month[currentMonthDigit + 9]),
+                    eval("json_data.global_calls.calls_by_month.call_no_match."+month[currentMonthDigit + 10]),
+                    eval("json_data.global_calls.calls_by_month.call_no_match."+month[currentMonthDigit + 11]),
+                    eval("json_data.global_calls.calls_by_month.call_no_match."+month[currentMonthDigit + 0])
                 ]
             }, {
                 label: 'Total Calls',
@@ -445,18 +477,18 @@ function buildCharts() {
                 backgroundColor: chartColors.purple,
                 borderColor: chartColors.purple,
                 data: [
-                    json_data.global_calls.calls_by_month.total_calls.jan,
-                    json_data.global_calls.calls_by_month.total_calls.feb,
-                    json_data.global_calls.calls_by_month.total_calls.mar,
-                    json_data.global_calls.calls_by_month.total_calls.apr,
-                    json_data.global_calls.calls_by_month.total_calls.may,
-                    json_data.global_calls.calls_by_month.total_calls.jun,
-                    json_data.global_calls.calls_by_month.total_calls.jul,
-                    json_data.global_calls.calls_by_month.total_calls.aug,
-                    json_data.global_calls.calls_by_month.total_calls.sep,
-                    json_data.global_calls.calls_by_month.total_calls.oct,
-                    json_data.global_calls.calls_by_month.total_calls.nov,
-                    json_data.global_calls.calls_by_month.total_calls.dec
+                    eval("json_data.global_calls.calls_by_month.total_calls."+month[currentMonthDigit + 1]),
+                    eval("json_data.global_calls.calls_by_month.total_calls."+month[currentMonthDigit + 2]),
+                    eval("json_data.global_calls.calls_by_month.total_calls."+month[currentMonthDigit + 3]),
+                    eval("json_data.global_calls.calls_by_month.total_calls."+month[currentMonthDigit + 4]),
+                    eval("json_data.global_calls.calls_by_month.total_calls."+month[currentMonthDigit + 5]),
+                    eval("json_data.global_calls.calls_by_month.total_calls."+month[currentMonthDigit + 6]),
+                    eval("json_data.global_calls.calls_by_month.total_calls."+month[currentMonthDigit + 7]),
+                    eval("json_data.global_calls.calls_by_month.total_calls."+month[currentMonthDigit + 8]),
+                    eval("json_data.global_calls.calls_by_month.total_calls."+month[currentMonthDigit + 9]),
+                    eval("json_data.global_calls.calls_by_month.total_calls."+month[currentMonthDigit + 10]),
+                    eval("json_data.global_calls.calls_by_month.total_calls."+month[currentMonthDigit + 11]),
+                    eval("json_data.global_calls.calls_by_month.total_calls."+month[currentMonthDigit + 0])
                 ]
             }]
         },
