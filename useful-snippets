@@ -1,0 +1,1 @@
+git rebase --root -x "git commit --amend --author 'phil-6 <github@purpleriver.dev>' -CHEAD --no-edit"
